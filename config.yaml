@@ -1,16 +1,16 @@
-baseURL: http://example.org/
+baseURL: https://chengchenxu.netlify.app/
 languageCode: en-us
-title: Forty
+title: Portfolio website for Cissie(Chengchen) Xu
 theme: forty
 googleAnalytics: ''
 disqusShortname: ''
 params:
   banner:
     buttonText: Get Started
-    subtitle: |-
+    #subtitle: |-
       A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
       AND RELEASED UNDER THE CREATIVE COMMONS.
-    title: Hi, my name is Forty
+    title: Hi, my name is Cissie(Chengchen) Xu
   blog: {}
   contact:
     address:
@@ -21,11 +21,11 @@ params:
     buttonClear: Clear
     buttonSend: Send message
     email:
-      - email: example@domain.com
+      - email: xu_chengchen@outlook.com
         title: Email
     enable: yes
     phone:
-      - phone: (000) 000-0000 x1234
+      - phone: (075) 3612-8229 x1234
         title: Phone
   custom_css: []
   custom_js: []
@@ -42,21 +42,21 @@ params:
         text: 'Design: '
         url: https://www.html5up.net
     social:
-      - icon: fa-twitter
-        label: Twitter
-        url: https://www.twitter.com
-      - icon: fa-facebook
-        label: Facebook
-        url: https://www.facebook.com
+#      - icon: fa-twitter
+#       label: Twitter
+#       url: https://www.twitter.com
+#     - icon: fa-facebook
+#        label: Facebook
+#       url: https://www.facebook.com
       - icon: fa-instagram
         label: Instagram
         url: https://www.instagram.com
       - icon: fa-github
         label: GitHub
-        url: https://www.github.com
+        url: https://github.com/cecexu21github.com
       - icon: fa-linkedin
         label: LinkedIn
-        url: https://www.linkedin.com
+        url: https://www.linkedin.com/in/chengchen-xu
   image: ''
   name: Your name
   navigation:
