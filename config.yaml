@@ -8,7 +8,8 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      A Chinese girl's life experience in London Business School.
+      A Chinese girl's life experience 
+      in London Business School.
     title: Hi, my name is Cissie(Chengchen) Xu
   blog: {}
   contact:
@@ -33,7 +34,7 @@ params:
     heading: Page couldn't be found
     text: Please visit [this page](/)
   favicon: favicon.ico
-  #footer:
+  footer:
     copyright: Company Name
     enable: yes
     quicklinks:
