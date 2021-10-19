@@ -5,7 +5,7 @@ theme: forty
 googleAnalytics: ''
 disqusShortname: ''
 params:
-  banner: lbs.jpg
+  banner: 
     buttonText: Get Started
     subtitle: |-
       A Chinese girl's life experience 
