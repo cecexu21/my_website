@@ -43,8 +43,8 @@ params:
         url: https://www.html5up.net
     social:
       - icon: fa-twitter
-       label: Twitter
-       url: https://www.twitter.com
+        label: Twitter
+        url: https://www.twitter.com
       - icon: fa-facebook
         label: Facebook
         url: https://www.facebook.com/profile.php?id=100039852075154
