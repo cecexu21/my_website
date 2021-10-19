@@ -83,11 +83,11 @@ params:
     showcase:
       - image: my photo.jpg
         subtitle: My previous experience
-        title: Self-introduction
-        url: blogs/aliquam
+        title: SELF-INTRODUCTION
+        url: file:///Users/xuchengchen/Desktop/my_website/self-introduction.html
       - image: election.jpg
         subtitle: Who will be the next chancellor?
-        title: German election poll tracker
+        title: GERMAN ELECTION POLL TRACKER
         url: https://www.politico.eu/europe-poll-of-polls/germany/
       - image: pic03.jpg
         subtitle: Lorem Etiam Nullam

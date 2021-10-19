@@ -1,0 +1,16 @@
+---
+title: "Hi, nice to meet you!"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+![ ](/Users/xuchengchen/Desktop/MylifeinUSA.jpeg)
+
+> Hi, my name is Chengchen Xu, but you can also call me Cissie Xu, this is totally up to you!
+Currently, I'm studying in MFA program to learn more finance-oriented stuff. Before I started my journey in LBS, I studied in Fudan University for four years and had a great time of exchanging life in CA, USA. 
+
+
+
