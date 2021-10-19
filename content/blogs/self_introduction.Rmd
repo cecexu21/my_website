@@ -10,6 +10,8 @@ image: MylifeinUSA.jpeg # save picture in \static\img\blogs. Acceptable formats=
 keywords: ""
 slug: self_introduction # slug is the shorthand URL address... no spaces plz
 title: Hi, Nice to meet you!
+runtime: shiny
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -17,8 +19,35 @@ knitr::opts_chunk$set(echo = TRUE)
 library(here)
 ```
 
-Hi, my name is Chengchen Xu, but you can also call me Cissie Xu, this is totally up to you!
-Currently, I'm studying in MFA program to learn more finance-oriented stuff. Before I started my journey in LBS, I studied in Fudan University for four years and had a great time of exchanging life in CA, USA. 
+> Hi, my name is Chengchen Xu, but you can also call me Cissie Xu, this is totally up to you!
+Currently, I'm studying in MFA program to learn more finance-oriented stuff. Before I started my journey in LBS, I studied in Fudan University for four years and had a great exchange studying time in CA, USA. (The photo above is the one that shot in Los Angeles.) Hope this picture can make you happy all the time!
+
+Since you have already seen the picture of me, do you want to know more about me?
+
+Firstly, still let me introduce my education background!
+
+## **Education background**
+-   London Business School              MFA                     2021.08-2022.08   London, UK
+    -  Main courses: Investment Fundamentals, Data Anayltics For Finance, Anaylsis of Financial Statement
+-   Fudan University                    Financial Management    2017.09-2021.07   Shanghai, China
+    -  Main courses: Financial Management, Accounting, Statistics, etc..
+
+-   University of Southern California   Finance                 2019.08-2020.01         Los Angeles, California
+    -  Main courses: Investments, Consumers and Marketing
 
 
+Then comes to my internship experience,with a focus on investment banking, I had a lot of previous experience working in IBD departments.
+## **Education background**
 
+### Here are two Shiny widgets
+
+```{r echo = FALSE}
+selectInput("n_breaks", label = "Number of bins:",
+              choices = c(10, 20, 35, 50), selected = 20)
+  
+sliderInput("bw_adjust", label = "Bandwidth adjustment:",
+              min = 0.2, max = 2, value = 1, step = 0.2)
+```
+
+
+```{r echo = FALSE}
