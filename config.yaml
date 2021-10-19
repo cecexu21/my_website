@@ -61,7 +61,7 @@ params:
   name: Chengchen Xu
   navigation:
     button1:
-      - name: Explore more about me
+      - name: Get Started
         url: blogs
     button2:
       - name: Log In
@@ -89,9 +89,9 @@ params:
         subtitle: Who will be the next chancellor?
         title: GERMAN ELECTION POLL TRACKER
         url: https://www.politico.eu/europe-poll-of-polls/germany/
-      - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
+      - image: bikesTFL.jpg
+        subtitle: Do you know the rental circumstance of bikes in UK?
+        title: 
         url: blogs/magna
       - image: pic04.jpg
         subtitle: Nisl Sed Aliquam
