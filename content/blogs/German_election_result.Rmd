@@ -1,15 +1,14 @@
 ---
-categories:  
-- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
-- ""
-date: "2021-10-19"
-description: Results of 2021 German Elections # the title that will show up once someone gets to this page
-draft: false
-image: german_election.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
-
-keywords: ""
-slug: German_election_result # slug is the shorthand URL address... no spaces plz
-title: Which party is leading the race?
+title: "Which party is leading the race?"
+date: '2021-10-19'
+description: Results of 2021 German Elections
+draft: no
+image: german_election.jpg
+keywords: ''
+slug: German_election_result
+categories:
+- ''
+- ''
 ---
 
 ```{r, setup, echo=FALSE}
@@ -125,7 +124,7 @@ df1 <- data.frame(SPD, Union, AfD, FDP, Linke, Grune, day) #We create a new data
 df2 <- melt(df1, id.vars='day') #Then, we melt all the parties' polling scores and keep the date as the other variable.
 head(df2)
 
-ggplot(df2,aes(x = day, y = value, colour = variable)) + #We plot the days and the parties' polling scores. We colour the parties to be able to differentiate them.
+p<-ggplot(df2,aes(x = day, y = value, colour = variable)) + #We plot the days and the parties' polling scores. We colour the parties to be able to differentiate them.
   geom_point(shape=1) + #We make the points hollow to be able to better see the rolling average we'll create.
   geom_ma(spd_MA= SMA, n=14, linetype = 1, size=1) + #We create a 14-day rolling average following the Guardian's methodology. We change the linetype to a solid one so that it is more easily readable.
 theme_bw()+
@@ -137,7 +136,9 @@ labs(
 #Finally, we format the main title, the axes' titles and the axes' text to make the chart more easily readable.
 theme(plot.title = element_text(size = 14, face = "bold")) +
 theme(axis.title.x = element_text(size = 12, angle = 0)) +
-theme(axis.title.y = element_text(size = 12, angle = 90)) +
-  NULL
+theme(axis.title.y = element_text(size = 12, angle = 90)) 
+
+ggplotly(p)
+
 ```
 

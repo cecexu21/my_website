@@ -1,0 +1,52 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2021-10-19"
+description: Stories about me # the title that will show up once someone gets to this page
+draft: false
+image: MylifeinUSA.jpeg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: self_introduction # slug is the shorthand URL address... no spaces plz
+title: Hi, Nice to meet you!
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(here)
+library(plotly)
+library(shiny)
+```
+
+> Hi, my name is Chengchen Xu, but you can also call me Cissie Xu, this is totally up to you!
+Currently, I'm studying in MFA program to learn more finance-oriented stuff. Before I started my journey in LBS, I studied in Fudan University for four years and had a great exchange studying time in CA, USA. (The photo above is the one that shot in Los Angeles.) Hope this picture can make you happy all the time!
+
+Since you have already seen the picture of me, do you want to know more about me?
+
+Firstly, still let me introduce my education background!
+
+## **<span style="color:yellow;">Education background</span>**
+-   London Business School              MFA                     2021.08-2022.08   London, UK
+    -  Main courses: Investment Fundamentals, Data Anayltics For Finance, Anaylsis of Financial Statement
+-   Fudan University                    Financial Management    2017.09-2021.07   Shanghai, China
+    -  Main courses: Financial Management, Accounting, Statistics, etc..
+
+-   University of Southern California   Finance                 2019.08-2020.01         Los Angeles, California
+    -  Main courses: Investments, Consumers and Marketing
+
+Then comes to my internship experience,with a focus on investment banking, I had a lot of previous experience working in IBD departments.
+
+## **<span style="color:yellow;">Internship Experience</span>**
+
+I have been an investment banker in Huatai United Securities and Haitong Securities respectively, and welcome to add my linkedin to know more about my internship experience in these two companies!
+
+
+
+
+
+
+
+
+

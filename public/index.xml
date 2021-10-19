@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolio website for Cissie(Chengchen) Xu</title>
+    <link>https://chengchenxulbs.netlify.app/</link>
+    <description>Recent content on Portfolio website for Cissie(Chengchen) Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://chengchenxulbs.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hi, Nice to meet you!</title>
+      <link>https://chengchenxulbs.netlify.app/blogs/self_introduction/</link>
+      <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chengchenxulbs.netlify.app/blogs/self_introduction/</guid>
+      <description>Hi, my name is Chengchen Xu, but you can also call me Cissie Xu, this is totally up to you! Currently, I’m studying in MFA program to learn more finance-oriented stuff. Before I started my journey in LBS, I studied in Fudan University for four years and had a great exchange studying time in CA, USA. (The photo above is the one that shot in Los Angeles.) Hope this picture can make you happy all the time!</description>
+    </item>
+    
+    <item>
+      <title>Which party is leading the race?</title>
+      <link>https://chengchenxulbs.netlify.app/blogs/german_election_result/</link>
+      <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chengchenxulbs.netlify.app/blogs/german_election_result/</guid>
+      <description>Opinion polls for the 2021 German elections Here are the latest results of 2021 German elections. The Guardian newspaper has an election poll tracker for the upcoming German election. The list of the opinion polls since Jan 2021 can be found at Wikipedia and your task is to reproduce the graph similar to the one produced by the Guardian.
+The following code will scrape the wikipedia page and import the table in a dataframe, showing the results by our analysis.</description>
+    </item>
+    
+    <item>
+      <title>Risk-Return of DJIA stocks</title>
+      <link>https://chengchenxulbs.netlify.app/blogs/risk_return/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chengchenxulbs.netlify.app/blogs/risk_return/</guid>
+      <description>Returns of financial stocks Next, let’s choose the Dow Jones Industrial Average (DJIA) stocks and their ticker symbols and download some data. Besides the thirty stocks that make up the DJIA, we will also add SPY which is an SP500 ETF (Exchange Traded Fund).
+We will use the rvest package to scrape the Wikipedia page for the constituents of DJIA
+djia_url &amp;lt;- &amp;quot;https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average&amp;quot; #get tables that exist on URL tables &amp;lt;- djia_url %&amp;gt;% read_html() %&amp;gt;% html_nodes(css=&amp;quot;table&amp;quot;) # parse HTML tables into a dataframe called djia.</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>https://chengchenxulbs.netlify.app/post/2020-12-01-r-rmarkdown/</link>
+      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      
+      <guid>https://chengchenxulbs.netlify.app/post/2020-12-01-r-rmarkdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.</description>
+    </item>
+    
+    <item>
+      <title>Aliquam</title>
+      <link>https://chengchenxulbs.netlify.app/blogs/aliquam/</link>
+      <pubDate>Tue, 31 Oct 2017 22:42:51 -0500</pubDate>
+      
+      <guid>https://chengchenxulbs.netlify.app/blogs/aliquam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tempus</title>
+      <link>https://chengchenxulbs.netlify.app/blogs/tempus/</link>
+      <pubDate>Tue, 31 Oct 2017 22:26:13 -0500</pubDate>
+      
+      <guid>https://chengchenxulbs.netlify.app/blogs/tempus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Magna</title>
+      <link>https://chengchenxulbs.netlify.app/blogs/magna/</link>
+      <pubDate>Tue, 31 Oct 2017 22:26:09 -0500</pubDate>
+      
+      <guid>https://chengchenxulbs.netlify.app/blogs/magna/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ipsum</title>
+      <link>https://chengchenxulbs.netlify.app/blogs/ipsum/</link>
+      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
+      
+      <guid>https://chengchenxulbs.netlify.app/blogs/ipsum/</guid>
+      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</description>
+    </item>
+    
+  </channel>
+</rss>
