@@ -34,7 +34,7 @@ library(tidyquant)
 library(rvest) # to scrape wikipedia page
 ```
 
-> Hi, my name is Chengchen Xu, but you can also call me Cissie Xu, this is totally up to you!
+> Hi, my name is Chengchen Xu, but you can also call me Cissie Xu, this is totally up to you!\n
 Currently, I'm studying in MFA program to learn more finance-oriented stuff. Before I started my journey in LBS, I studied in Fudan University for four years and had a great exchange studying time in CA, USA. (The photo above is the one that shot in Los Angeles.) Hope this picture can make you happy all the time!
 
 Since you have already seen the picture of me, do you want to know more about me?
@@ -50,14 +50,14 @@ Firstly, still let me introduce my education background!
 -   University of Southern California   Finance                 2019.08-2020.01         Los Angeles, California
     -  Main courses: Investments, Consumers and Marketing
     
-Through undergraduate and master program, I've learned a lot of statistic knowledge,especially learning a lot of interesting concepts and visualized methods taught by kostis, so this time I will bring some more interesting things to introduce statistics and data visualization.
+Through undergraduate and master program, I've learned a lot of statistic knowledge,especially learning a lot of interesting concepts and visualized methods taught by kostis.
+So this time I will bring some more interesting things to introduce statistics and data visualization.
 
-```{r echo=FALSE, fig.cap="what can r do", out.width = '30%'}
+```{r echo=FALSE, fig.cap="What can r do", fig.showtext=TRUEout.width = '30%'}
 knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811a802ddc524c3271302893a149/a7003/images/bandthree2.png")
 ```
 
-Through using some codes, I can mapping the places I was born and I loved!
-
+R can also be used to show my hometown, Shanghai! 
 
 
 ```{r}
@@ -80,7 +80,8 @@ I have been an investment banking intern in Huatai United Securities and Haitong
 
 So during this period I have done a lot information collection work and analysis work such as procurement record analysis.
 
-###**Let me show parts of my workplace and daily rontine!**###
+
+### **Let me show parts of my workplace and daily rontine!** 
 
 
 -  Participated in the Shandong Spunlaced nonwoven manufacturer Pre-IPO project 
@@ -91,7 +92,7 @@ So during this period I have done a lot information collection work and analysis
 
 ![ ](/Users/xuchengchen/Desktop/huatai_united.jpg)
 
-## **<span style="color:grey;">Internship Experience</span>**
+
 
 
 
