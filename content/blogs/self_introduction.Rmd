@@ -27,7 +27,7 @@ Since you have already seen the picture of me, do you want to know more about me
 
 Firstly, still let me introduce my education background!
 
-## **<span style="color:white;">Education background</span>**
+## **<span style="color:yellow;">Education background</span>**
 -   London Business School              MFA                     2021.08-2022.08   London, UK
     -  Main courses: Investment Fundamentals, Data Anayltics For Finance, Anaylsis of Financial Statement
 -   Fudan University                    Financial Management    2017.09-2021.07   Shanghai, China
@@ -38,7 +38,7 @@ Firstly, still let me introduce my education background!
 
 Then comes to my internship experience,with a focus on investment banking, I had a lot of previous experience working in IBD departments.
 
-## **<span style="color:white;">Internship Experience</span>**
+## **<span style="color:yellow;">Internship Experience</span>**
 
 I have been an investment banker in Huatai United Securities and Haitong Securities respectively, and welcome to add my linkedin to know more about my internship experience in these two companies!
 
