@@ -84,7 +84,7 @@ params:
       - image: my photo.jpg
         subtitle: My previous experience
         title: SELF-INTRODUCTION
-        url: file:///Users/xuchengchen/Desktop/my_website/self-introduction.html
+        url: blog/magna
       - image: election.jpg
         subtitle: Who will be the next chancellor?
         title: GERMAN ELECTION POLL TRACKER
