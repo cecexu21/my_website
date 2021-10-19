@@ -14,17 +14,11 @@ title: Hi, Nice to meet you!
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(here)
 ```
 
 Hi, my name is Chengchen Xu, but you can also call me Cissie Xu, this is totally up to you!
 Currently, I'm studying in MFA program to learn more finance-oriented stuff. Before I started my journey in LBS, I studied in Fudan University for four years and had a great time of exchanging life in CA, USA. 
 
-## **Education background**
 
-+   London Business School$~~~~~~~~~~~~~~~$_MFA_$~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$  2021.08-2022.08$~~~~~~~~~$London, UK
-
-+   Fudan University$~~~~~~~~~~~~~~~~~~~~~~~~~~$_Financial Management_$~~~~~~~~~~~~~$
-2017.09-2021.07$~~~~~~~~$Shanghai, China
-
-+   University of Southern California$~~~~$_Finance_$~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$ 2019.08-2020.01 $~~~~~~~$ Los Angeles, California
 
