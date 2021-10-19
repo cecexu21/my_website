@@ -81,7 +81,7 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: lbs.jpg
+      - image: my photo.jpg
         subtitle: My previous experience
         title: Self-introduction
         url: blogs/aliquam
@@ -111,5 +111,5 @@ params:
     subtitle: "Hope to have chances to connect with you and hear more about your stories.
       \n   Thanks for your visit to my website! \n    Now, here is getting close to the end of my presentation.
        \n   To explore more about me, you can click on the icons below, welcome to be my friends on these social platforms."
-    title: Massa libero
+    title: That is the end
     url: blogs
