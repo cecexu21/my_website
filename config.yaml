@@ -61,7 +61,7 @@ params:
   name: Chengchen Xu
   navigation:
     button1:
-      - name: Get Started
+      - name: Explore more about me! 
         url: blogs
     button2:
       - name: Log In
@@ -83,7 +83,7 @@ params:
     showcase:
       - image: lbs.jpg
         subtitle: Ipsum Dolor Sit Amet
-        title: Aliquam
+        title: Self-introduction
         url: blogs/aliquam
       - image: pic02.jpg
         subtitle: Feugiat Amet Tempus
