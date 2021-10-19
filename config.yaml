@@ -8,8 +8,7 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
-      AND RELEASED UNDER THE CREATIVE COMMONS.
+      A Chinese girl's life experience in London Business School.
     title: Hi, my name is Cissie(Chengchen) Xu
   blog: {}
   contact:
@@ -25,7 +24,7 @@ params:
         title: Email
     enable: yes
     phone:
-      - phone: (075) 3612-8229 x1234
+      - phone: (075) 3612-8229
         title: Phone
   custom_css: []
   custom_js: []
@@ -34,7 +33,7 @@ params:
     heading: Page couldn't be found
     text: Please visit [this page](/)
   favicon: favicon.ico
-  footer:
+  #footer:
     copyright: Company Name
     enable: yes
     quicklinks:
@@ -45,12 +44,12 @@ params:
 #      - icon: fa-twitter
 #       label: Twitter
 #       url: https://www.twitter.com
-#     - icon: fa-facebook
-#        label: Facebook
-#       url: https://www.facebook.com
+     - icon: fa-facebook
+        label: Facebook
+       url: https://www.facebook.com/profile.php?id=100039852075154
       - icon: fa-instagram
         label: Instagram
-        url: https://www.instagram.com
+        url: https://www.instagram.com/elenaxu57/
       - icon: fa-github
         label: GitHub
         url: https://github.com/cecexu21github.com
@@ -58,7 +57,7 @@ params:
         label: LinkedIn
         url: https://www.linkedin.com/in/chengchen-xu
   image: ''
-  name: Your name
+  name: Chengchen Xu
   navigation:
     button1:
       - name: Get Started
