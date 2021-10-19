@@ -61,7 +61,7 @@ params:
   name: Chengchen Xu
   navigation:
     button1:
-      - name: Explore more about me! 
+      - name: Explore more about me
         url: blogs
     button2:
       - name: Log In
@@ -82,7 +82,7 @@ params:
     enable: yes
     showcase:
       - image: lbs.jpg
-        subtitle: Ipsum Dolor Sit Amet
+        subtitle: My previous experience
         title: Self-introduction
         url: blogs/aliquam
       - image: pic02.jpg
@@ -108,11 +108,8 @@ params:
   two:
     buttonText: Get Started
     enable: yes
-    subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
-      \n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \n    Pellentesque
-      condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
-      pellentesque lorem ipsum dolor. \n    Nullam et orci eu lorem consequat tincidunt.
-      Vivamus et sagittis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
-      amet pharetra et feugiat tempus."
+    subtitle: "Hope to have chances to connect with you and hear more about your stories.
+      \n   Thanks for your visit to my websites! \n    Now here is getting close to the end of my presentation. Maecenas laoreet massa vel lacinia
+       \n   To explore more about me, you can click on the icons below, welcome to be my friends on these social platforms."
     title: Massa libero
     url: blogs
