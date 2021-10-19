@@ -17,6 +17,8 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(here)
+library(plotly)
+library(shiny)
 ```
 
 > Hi, my name is Chengchen Xu, but you can also call me Cissie Xu, this is totally up to you!
@@ -26,7 +28,7 @@ Since you have already seen the picture of me, do you want to know more about me
 
 Firstly, still let me introduce my education background!
 
-## **Education background**
+## **<span style="color:blue;">Education background</span>**
 -   London Business School              MFA                     2021.08-2022.08   London, UK
     -  Main courses: Investment Fundamentals, Data Anayltics For Finance, Anaylsis of Financial Statement
 -   Fudan University                    Financial Management    2017.09-2021.07   Shanghai, China
@@ -38,7 +40,9 @@ Firstly, still let me introduce my education background!
 
 Then comes to my internship experience,with a focus on investment banking, I had a lot of previous experience working in IBD departments.
 
-## **<span style="color:red;">Education background</span>**
+## **<span style="color:blue;">Internship Experience</span>**
+
+
 
 ### Here are two Shiny widgets
 
