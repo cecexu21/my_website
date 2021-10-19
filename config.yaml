@@ -45,15 +45,15 @@ params:
 #      - icon: fa-twitter
 #       label: Twitter
 #       url: https://www.twitter.com
-     - icon: fa-facebook
+      - icon: fa-facebook
         label: Facebook
-       url: https://www.facebook.com/profile.php?id=100039852075154
+        url: https://www.facebook.com/profile.php?id=100039852075154
       - icon: fa-instagram
         label: Instagram
         url: https://www.instagram.com/elenaxu57/
       - icon: fa-github
         label: GitHub
-        url: https://github.com/cecexu21github.com
+        url: https://github.com/cecexu21
       - icon: fa-linkedin
         label: LinkedIn
         url: https://www.linkedin.com/in/chengchen-xu
