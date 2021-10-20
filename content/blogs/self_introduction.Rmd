@@ -57,14 +57,14 @@ knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811a8
 
 **R can also be used to show my hometown, Shanghai! **
 
-##**Welcome to Shanghai!
+###**Welcome to Shanghai!**
 
 There are a lot of districts in SHANGHAI, such as Jingan District, Huangpu District, Xuhui District, Pudong District, etc..
 
 Firstly, let us start the journey from viewing the whole city!
 
 
-```{r, echo=FALSE}
+```{r, map of shanghai, echo=FALSE}
 library(leaflet)
 
 Shanghai <- leaflet() %>% 
@@ -77,17 +77,17 @@ Shanghai
 Now, let me introduces some fascinating destinations in Shanghai.
 There are five most famous destinations for tourists!
 
-```{r,echo=FALSE}
+```{r,destinations in shanghai, echo=FALSE}
 destinations<-data.frame(place=c("Shanghai Museum","Yu Garden","Shanghai Disneyland","The Bund","Shanghai Tower"),
                          lat=c(31.230278,31.22416577,31.1453, 31.233501,31.2503),
              lng=c(121.470550,121.48583139,121.6573, 121.505760,121.5064))
-kable(head(destinations),align="c")
+kable(head(destinations),align="l")
 ```
 \n\
 
 To explore more information, please click on the leaves which will lead you to official websites!
 
-```{r, echo=FALSE,fig.align='center'}
+```{r, destinations in shanghai 2, echo=FALSE}
 destination_location<-
   data.frame(lat=c(31.230278,31.22416577,31.1453, 31.233501,31.2503),
              lng=c(121.470550,121.48583139,121.6573, 121.505760,121.5064)) 
@@ -117,9 +117,6 @@ addMarkers(icon=Icons,popup=destination_sites)
 
 
 ```
-
-
-
 \n\
 Then comes to my internship experience, with a focus on investment banking, I had a lot of previous experience working in IBD departments.
 
