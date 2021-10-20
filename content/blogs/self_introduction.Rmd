@@ -72,7 +72,6 @@ Shanghai <- leaflet() %>%
   addProviderTiles("CartoDB.Positron") 
 Shanghai
 ```
-
 \n\
 Now, let me introduces some fascinating destinations in Shanghai.
 There are five most famous destinations for tourists!
@@ -118,12 +117,12 @@ addMarkers(icon=Icons,popup=destination_sites)
 
 ```
 \n\
-Then comes to my internship experience, with a focus on investment banking, I had a lot of previous experience working in IBD departments.
+##Then comes to my internship experience, with a focus on investment banking, I had a lot of previous experience working in IBD departments.
 
 
 # **<span style="color:white;">Internship Experience</span>**
 
-I have been an investment banking intern in [Huatai United Securities](/Users/xuchengchen/Desktop/huatai_united.jpg) and Haitong Securities respectively, and welcome to add my linkedin to know more about my internship experience in these two companies!
+I have been an investment banking intern in [Huatai United Securities](https://www.lhzq.com/) and Haitong Securities respectively, and welcome to add my linkedin to know more about my internship experience in these two companies!
 
 
 So during this period I have done a lot information collection work and analysis work such as procurement record analysis, gradually sharpened my logic thinking ability and also Microsoft office skills.
@@ -153,12 +152,7 @@ So during this period I have done a lot information collection work and analysis
 **So, at the end of my introduction, I'm glad to share a song with you! **
 
 
-<video controls>
-  <source src="https://www.youtube.com/watch?v=nSDgHBxUbVQ" type="video/mp4">
-</video>
-
-<span style="font-size:12px;"> 
-*Photograph by Ed Sheeran*</span>
+[*Photograph by Ed Sheeran*](https://www.youtube.com/watch?v=nSDgHBxUbVQ)
 
 
 

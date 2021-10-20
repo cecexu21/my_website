@@ -1,0 +1,146 @@
+---
+title: "What can CPI and its components tell us?"
+date: '2021-10-19'
+description: Cpi and its components' change
+draft: no
+image: cpi.jpg
+keywords: ''
+slug: cpi_changes
+categories:
+- ''
+- ''
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center")
+
+```
+
+```{r load-libraries, include=FALSE, cache = TRUE}
+
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(mosaic)
+library(ggthemes)
+library(lubridate)
+library(here)
+library(skimr)
+library(janitor)
+library(httr)
+library(readxl)
+library(vroom)
+library(infer)
+library(rvest)
+library(fivethirtyeight)
+library(tidyquant)
+
+
+```
+# How has the CPI and its components changed over the last few years?
+
+We want to recrate the following Consumer Price Index graph: 
+
+```{r cpi_all_components_since_2016, cache=TRUE}
+knitr::include_graphics(here::here("images", "cpi_components_since_2016.png"), error = FALSE)
+```
+##Cleaning/modifying data and building chart
+we had some issues pulling data directly from the FED so we downloaded an excel file instead. 
+
+```{r cpi_plot, ,cache=TRUE}
+
+#using dataset given in github under "data" file holder
+start <- "Consumer Price Index for All Urban Consumers: "
+end <- " in U.S. City Average"
+cpi<-read_csv((here::here("data", "cpi_data.csv")))
+
+new_title<-cpi$title
+
+for(i in 1:18782){
+  cpi[i,4] <- strsplit(strsplit(new_title[i], start)[[1]][2], end)[[1]][1]
+} #selecting the data in which we are interested
+
+cpi_new <- cpi%>%
+  mutate(date=ymd(date),
+         year=year(date),
+         year_change = value/lag(value, 12) - 1)%>% #calculating the YoY change
+  select(component,date,year,value,title,year_change) %>% #selecting the columns we will analyse
+  filter(year>2015) #filtering for the years after 2015
+  
+cpi_new_2<-cpi_new%>%
+  mutate(positive=ifelse(year_change> 0, 1, -1)) #creating a column to differentiate positive YoY changes vs negative YoY changes
+
+cpi_new_3<-cpi_new%>%
+  select(year_change,title) %>% #selecting the columns we will analyse
+  group_by(title)%>% #grouping by titles
+  filter(title!="All Items") %>% #putting "All Items" first
+  arrange(desc(year_change))%>% #arrange by descening order of YoY change
+  select(title)%>%
+  distinct()
+ 
+component_order<-c("All Items",as.character(cpi_new_3$title))
+
+ggplot(cpi_new_2,aes(x=date,y=year_change,color=as.factor(positive)))+
+   geom_point(size=0.2)+ #plotting the YoY changes
+   scale_color_manual(values=c('blue2','red'))+ #colouring positive YoY changes in blue and negative YoY changes in red
+   geom_smooth(size=0.2,colour="grey",se=FALSE)+
+   theme_bw()+ #setting a theme for increases readibility
+   theme(legend.position = "none",
+         legend.background = element_blank(),
+        plot.title=element_text(size=6,face="bold"),
+        axis.ticks=element_blank(),
+        axis.text=element_text(size=4),
+        strip.text=element_text(size=4),
+        axis.title=element_text(size=4,face="bold"),
+        plot.subtitle=element_text(size=4),
+        plot.caption = element_text(size=4),
+        plot.background = element_blank(),
+        panel.background = element_blank())+
+   labs(title="Yearly change of US CPI (All Items) and its components",
+        subtitle= "<span style = 'font-size:12pt'>YoY change being <span style = 'color: orangered;'>positive</span> and <span style = 'color:steelblue1;'>negative</span><br>Jan 2016 to Aug 2021",
+         y="Yoy % Change",x="",
+        caption="Data from St. Louis Fed FRED
+        https://fredaccount.stlouisfed/org/public/datalist/843")+
+   scale_y_continuous(labels = scales::percent)+ #setting a scale in percent for increased readibility
+   facet_wrap(~fct_relevel(title,component_order),scales="free") #faceting by CPI componenent and setting the scale free to maximize the area on which the YoY changes are displayed
+
+```
+
+```{r cpi_plot_7_components, cache=TRUE}
+ggplot(subset(cpi_new_2,title %in% c("Housing","Transportation", "Food and beverages","Medical care", "Education and communication", "Recreation", "Apparel")),aes(x=date,y=year_change,color=as.factor(positive)))+
+   geom_point(size=0.2)+
+  scale_color_manual(values=c('blue2','red'))+
+   geom_smooth(size=0.2,colour="grey",se=FALSE)+
+   theme_bw()+
+   theme(legend.position = "none",
+        legend.background=element_blank(),
+        plot.title=element_text(size=6,face="bold"),
+        axis.ticks=element_blank(),
+        axis.text=element_text(size=4),
+        strip.text=element_text(size=4),
+        axis.title=element_text(size=4,face="bold"),
+        plot.subtitle=element_text(size=4),
+        plot.caption = element_text(size=4),
+        plot.background = element_blank(),
+        aspect.ratio = 0.1,
+        panel.border = element_rect(colour="black"))+
+   labs(title="Yearly change of US CPI 7 key components",
+        subtitle = "<span style = 'font-size:12pt'>YoY change being <span style = 'color: orangered;'
+        >positive</span> and <span style = 'color:steelblue1;'
+        >negative</span><br>Jan 2016 to Aug 2021",
+         y="Yoy % Change",x="",
+        caption="Data from St. Louis Fed FRED
+        https://fredaccount.stlouisfed/org/public/datalist/843")+
+   scale_y_continuous(labels = scales::percent)+
+  facet_wrap(~title,scales="free")
+```

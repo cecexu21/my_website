@@ -93,10 +93,10 @@ params:
         subtitle: Do you know the rental circumstance of bikes in UK?
         title: Excess rentals in TfL bike sharing
         url: blogs/BikesTFL
-      - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Ipsum
-        url: blogs/ipsum
+      - image: cpi.jpg
+        subtitle: How has the CPI and its components changed over the last few years?
+        title: Secrets about CPI
+        url: blogs/cpi_changes
       - image: pic05.jpg
         subtitle: Ipsum Dolor Sit Amet
         title: Consequat
