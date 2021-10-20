@@ -1,7 +1,7 @@
 ---
 title: "GDP components in Different Countries ?"
 date: '2021-10-19'
-description: DP components over time and among countries 
+description: DP components over time and among countries
 draft: no
 image: gdp.jpg
 keywords: ''
@@ -12,7 +12,7 @@ categories:
 ---
 # GDP components over time and among countries 
 
-This time, we want to anaylze trends of [GDP comopents over time and among countries] (https://www.statista.com/statistics/264653/proportions-of-economic-sectors-in-gross-domestic-product-gdp-in-selected-countries/)
+This time, we want to anaylze trends of [GDP components over time and among countries](https://www.statista.com/statistics/264653/proportions-of-economic-sectors-in-gross-domestic-product-gdp-in-selected-countries/)
 
 
 ```{r, setup, echo=FALSE}
@@ -142,7 +142,7 @@ Secondly, recall that GDP is the sum of Household Expenditure (Consumption *C*),
 
 > What is the % difference between what you calculated as GDP and the GDP figure included in the dataframe?
 
---> OUR ANSWER BELOW <--
+We will answer this question through our codes.
 
 ```{r GDP differences, cache=TRUE}
 

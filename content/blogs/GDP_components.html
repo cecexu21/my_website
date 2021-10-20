@@ -1,7 +1,7 @@
 ---
 title: "GDP components in Different Countries ?"
 date: '2021-10-19'
-description: DP components over time and among countries 
+description: DP components over time and among countries
 draft: no
 image: gdp.jpg
 keywords: ''
@@ -16,7 +16,7 @@ categories:
 
 <div id="gdp-components-over-time-and-among-countries" class="section level1">
 <h1>GDP components over time and among countries</h1>
-<p>This time, we want to anaylze trends of [GDP comopents over time and among countries] (<a href="https://www.statista.com/statistics/264653/proportions-of-economic-sectors-in-gross-domestic-product-gdp-in-selected-countries/" class="uri">https://www.statista.com/statistics/264653/proportions-of-economic-sectors-in-gross-domestic-product-gdp-in-selected-countries/</a>)</p>
+<p>This time, we want to anaylze trends of <a href="https://www.statista.com/statistics/264653/proportions-of-economic-sectors-in-gross-domestic-product-gdp-in-selected-countries/">GDP components over time and among countries</a></p>
 <pre class="r"><code>UN_GDP_data  &lt;- read_excel(here::here(&quot;data&quot;, &quot;Download-GDPconstant-USD-countries.xlsx&quot;), # Excel filename
                 sheet=&quot;Download-GDPconstant-USD-countr&quot;, # Sheet name
                 skip=2) # Number of rows to skip</code></pre>
@@ -131,7 +131,7 @@ tidy_GDP_data_3 %&gt;%
 <blockquote>
 <p>What is the % difference between what you calculated as GDP and the GDP figure included in the dataframe?</p>
 </blockquote>
-<p>–&gt; OUR ANSWER BELOW &lt;–</p>
+<p>We will answer this question through our codes.</p>
 <pre class="r"><code>library(tidyverse)
 #creating vector of the countries we want to analyse
 country_list_3 &lt;- c(&quot;Germany&quot;,&quot;India&quot;,&quot;United States&quot;)
