@@ -38,10 +38,10 @@ library(rvest) # to scrape wikipedia page
 Currently, I'm studying in MFA program to learn more finance-oriented stuff. Before I started my journey in LBS, I studied in Fudan University for four years and had a great exchange studying time in CA, USA. (The photo above is the one that shot in Los Angeles.) Hope this picture can make you happy all the time!
 
 
-Since you have already seen the picture of me, **do you want to know more about me?**
+Since you have already seen the picture of me, **do you want to know more about me?**\n\
 *Firstly, still let me introduce my education background!*
 
-# **<span style="color:grey;">Education background</span>**
+# **<span style="color:light grey;">Education background</span>**
 -   London Business School              MFA                     2021.08-2022.08   London, UK
     -  Main courses: Investment Fundamentals, Data Anayltics For Finance, Anaylsis of Financial Statement
 -   Fudan University                    Financial Management    2017.09-2021.07   Shanghai, China
@@ -74,26 +74,29 @@ Shanghai
 
 
 
-> Then comes to my internship experience,with a focus on investment banking, I had a lot of previous experience working in IBD departments.
+Then comes to my internship experience, with a focus on investment banking, I had a lot of previous experience working in IBD departments.
 
 
-## **<span style="color:white;">Internship Experience</span>**
+# **<span style="color:white;">Internship Experience</span>**
 
-I have been an investment banking intern in Huatai United Securities and Haitong Securities respectively, and welcome to add my linkedin to know more about my internship experience in these two companies!
+I have been an investment banking intern in [Huatai United Securities](/Users/xuchengchen/Desktop/huatai_united.jpg) and Haitong Securities respectively, and welcome to add my linkedin to know more about my internship experience in these two companies!
+![ ](/Users/xuchengchen/Desktop/huatai_united.jpg)
 
-So during this period I have done a lot information collection work and analysis work such as procurement record analysis.
+So during this period I have done a lot information collection work and analysis work such as procurement record analysis, gradually sharpened my logic thinking ability and also Microsoft office skills.
 
 
-### **Let me show parts of my workplace and daily rontine!** 
+## **Let me show parts of my workplace and daily routine!** 
 
 
 -  Participated in the Shandong Spunlaced nonwoven manufacturer Pre-IPO project 
     -  Conducted the desk research of spunlaced nonwoven industry,compared the target company with other 4 leading manufacturers and completed the project report
+    
 -  Completed the research of food supply chain industry
     -  Conducted the desk research and organized the interview records to better understand the industry, formed the logic and structure of the research, compared the Chinese market with the maturer American market; analyzed the development process and core competence of leading food supply chain company Sysco; foresaw the future trend of Chinese market
 
+-  Prepared project documents including reference cases, refinancing policy insights and pitch book for a ready-to-refinance IA household appliances company in China listed in A share market 
 
-
+# **<span style="color:light yellow;">Interests and Additional Information </span>**
 
 
 
