@@ -123,9 +123,8 @@ day <- german_election_polls$end_date
 
 df1 <- data.frame(SPD, Union, AfD, FDP, Linke, Grune, day) #We create a new data frame to which we assign all the variables we created.
 df2 <- melt(df1, id.vars='day') #Then, we melt all the parties' polling scores and keep the date as the other variable.
-head(df2)
 
-datatable(df2, options = list(pageLength = 6))
+datatable(df2, options = list(pageLength = 20))
 
 p<-ggplot(df2,aes(x = day, y = value, colour = variable)) + #We plot the days and the parties' polling scores. We colour the parties to be able to differentiate them.
   geom_point(shape=1) + #We make the points hollow to be able to better see the rolling average we'll create.
