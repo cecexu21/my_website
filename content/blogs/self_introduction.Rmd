@@ -1,16 +1,14 @@
 ---
-categories:  
-- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
-- ""
-date: "2021-10-19"
-description: Stories about me # the title that will show up once someone gets to this page
-draft: false
-image: MylifeinUSA.jpeg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
-
-keywords: ""
-slug: self_introduction # slug is the shorthand URL address... no spaces plz
-title: Hi, Nice to meet you!
-
+title: "Hi, Nice to meet you!"
+date: '2021-10-19'
+description: Stories about me
+draft: no
+image: MylifeinUSA.jpeg
+keywords: ''
+slug: self_introduction
+categories:
+- ''
+- ''
 ---
 
 ```{r setup, include=FALSE}
@@ -59,6 +57,12 @@ knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811a8
 
 **R can also be used to show my hometown, Shanghai! **
 
+##**Welcome to Shanghai!
+
+There are a lot of districts in SHANGHAI, such as Jingan District, Huangpu District, Xuhui District, Pudong District, etc..
+
+Firstlu, let us start the journey from viewing the whole city!
+
 
 ```{r, echo=FALSE}
 library(leaflet)
@@ -69,8 +73,55 @@ Shanghai <- leaflet() %>%
 Shanghai
 ```
 
+Now, let me introduces some fascinating destinations in Shanghai.
+There are five most famous destinations for tourist!
+
+```{r,echo=FALSE}
+destinations<-data.frame(place=c("Shanghai Museum","Yu Garden","Shanghai Disneyland","The Bund","Shanghai Tower"),
+                         lat=c(31.230278,31.22416577,31.1453, 31.233501,31.2503),
+             lng=c(121.470550,121.48583139,121.6573, 121.505760,121.5064))
+kable(head(destinations),align="c")
+```
 
 
+```{r, echo=FALSE}
+destination_location<-
+  data.frame(lat=c(31.230278,31.22416577,31.1453, 31.233501,31.2503),
+             lng=c(121.470550,121.48583139,121.6573, 121.505760,121.5064)) 
+
+Icons <- icons(
+  iconUrl = ifelse(destination_location$lng < 121.5,
+    "https://leafletjs.com/examples/custom-icons/leaf-green.png",
+    "https://leafletjs.com/examples/custom-icons/leaf-red.png"
+  ),
+  iconWidth = 38, iconHeight = 95,
+  iconAnchorX = 22, iconAnchorY = 94,
+  shadowUrl = "https://leafletjs.com/examples/custom-icons/leaf-shadow.png",
+  shadowWidth = 50, shadowHeight = 64,
+  shadowAnchorX = 4, shadowAnchorY = 62
+)
+
+destination_sites<- c("<a href= 'https://www.shanghaimuseum.net/mu/frontend/pg/index' >Shanghai Museum</a>",
+                      "<a href= 'http://www.yugarden.com.cn/page/articleView/index.html' >Shanghai Yu Garden</a>",
+                      "<a href='https://www.shanghaidisneyresort.com/en/'>Disney Shanghai</a>",
+                      "<a href='https://www.shanghaitower.com/shanghaizhongxinEnglish/index.php?num=1'>Shanghai Tower</a>",
+                      "<a href='http://www.bundcenter.com/zh/'>The Bund</a>")
+
+destination_location%>%
+leaflet() %>%
+addTiles() %>%
+addMarkers(icon=Icons,popup=destination_sites)
+
+
+
+
+
+
+```
+And also 
+
+
+\n\
 Then comes to my internship experience, with a focus on investment banking, I had a lot of previous experience working in IBD departments.
 
 
@@ -101,6 +152,13 @@ So during this period I have done a lot information collection work and analysis
 - Language:  Mandarin (Native), English (Fluent) 
 
 - Interests: Popular Music, cooking for family and friends, hiking with friends to explore new things!
+    -  So, at the end of my introduction, I'm glad to share a song with you! 
+
+<audio controls>
+  <source src="https://www.youtube.com/watch?v=nSDgHBxUbVQ" type="audio/mp3">
+</audio>
+
+    
 
 
 
