@@ -1,5 +1,5 @@
 ---
-title: "GDP components in Different Countries ?"
+title: "What do GDP components tell us? "
 date: '2021-10-19'
 description: DP components over time and among countries
 draft: no
@@ -144,7 +144,7 @@ Secondly, recall that GDP is the sum of Household Expenditure (Consumption *C*),
 
 We will answer this question through our codes.
 
-```{r GDP differences, cache=TRUE}
+```{r GDP differences,out.width="100%",  cache=TRUE}
 
 library(tidyverse)
 #creating vector of the countries we want to analyse
@@ -296,7 +296,7 @@ We plotted below a chart to analyse the breakdown of each of our countries' GDP 
 
 
 
-```{r gdp_plot_3, cache=TRUE}
+```{r gdp_plot_3,out.width="100%",  cache=TRUE}
 #creating vector of the new countries we want to analyse
 country_list_2 <- c("China", "Norway", "United Kingdom", "Thailand", "Italy", "France")
 

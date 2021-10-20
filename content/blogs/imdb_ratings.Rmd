@@ -3,7 +3,7 @@ title: "Steven Spielberg and Tim Burton: Whose movie rating is higher?"
 date: '2021-10-19'
 description: Differences between ratings of two directors
 draft: no
-image: movie_dune.jpeg
+image: movie_tim_burton.jpeg
 keywords: ''
 slug: imdb_ratings
 categories:
@@ -47,20 +47,16 @@ library(tinytex)
 ```
 # IMDB ratings: Differences between directors
 
-We all like movies, right? But do directors influence movie ratings? Or, genres? Or, anything else?
+We all like movies, right? But do directors themselves influence movie ratings? Or, maybe, just because of their preferences on genres? Or, anything else?
+
 ```{r showing pricture, fig.align='center',cache=TRUE}
-knitr::include_graphics("https://github.com/cecexu21/my_website/blob/main/steven.jpeg")
+knitr::include_graphics("/img/Steven-Spielberg.jpg",error=FALSE)
 ```
 
 
 
 
 Recall the IMBD ratings data. We want to explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. In order to test it, we need to calculate confidence intervals for the mean ratings of these two directors and as we can see they overlap. 
-
-
-```{r directors, echo=FALSE, out.width="100%"}
-knitr::include_graphics(here::here("images", "directors.png"), error = FALSE)
-```
 
 
 In addition, we will run a hpothesis test. We should use both the `t.test` command and the `infer` package to simulate from a null distribution, where you assume zero difference between the two.

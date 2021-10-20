@@ -74,7 +74,7 @@ Shanghai
 ```
 \n\
 Now, let me introduces some fascinating destinations in Shanghai.
-There are five most famous destinations for tourists!
+There are five most famous destinations in Shanghai!
 
 ```{r,destinations in shanghai, echo=FALSE}
 destinations<-data.frame(place=c("Shanghai Museum","Yu Garden","Shanghai Disneyland","The Bund","Shanghai Tower"),
@@ -84,7 +84,7 @@ kable(head(destinations),align="l")
 ```
 \n\
 
-To explore more information, please click on the leaves which will lead you to official websites!
+To explore more information, please click on the leaves which will lead you to official websites of these destinations!
 
 ```{r, destinations in shanghai 2, echo=FALSE}
 destination_location<-
