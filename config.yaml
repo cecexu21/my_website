@@ -89,10 +89,10 @@ params:
         subtitle: Who will be the next chancellor?
         title: GERMAN ELECTION POLL TRACKER
         url: blogs/German_election_result
-      - image: pic03.jpg
+      - image: bikes.jpg
         subtitle: Do you know the rental circumstance of bikes in UK?
         title: Excess rentals in TfL bike sharing
-        url: blogs/magna
+        url: blogs/BikesTFL
       - image: pic04.jpg
         subtitle: Nisl Sed Aliquam
         title: Ipsum
