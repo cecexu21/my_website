@@ -37,11 +37,11 @@ library(rvest) # to scrape wikipedia page
 > Hi, my name is Chengchen Xu, but you can also call me Cissie Xu, this is totally up to you!\n
 Currently, I'm studying in MFA program to learn more finance-oriented stuff. Before I started my journey in LBS, I studied in Fudan University for four years and had a great exchange studying time in CA, USA. (The photo above is the one that shot in Los Angeles.) Hope this picture can make you happy all the time!
 
-Since you have already seen the picture of me, do you want to know more about me?
 
-Firstly, still let me introduce my education background!
+Since you have already seen the picture of me, **do you want to know more about me?**
+*Firstly, still let me introduce my education background!*
 
-## **<span style="color:grey;">Education background</span>**
+# **<span style="color:grey;">Education background</span>**
 -   London Business School              MFA                     2021.08-2022.08   London, UK
     -  Main courses: Investment Fundamentals, Data Anayltics For Finance, Anaylsis of Financial Statement
 -   Fudan University                    Financial Management    2017.09-2021.07   Shanghai, China
@@ -53,7 +53,7 @@ Firstly, still let me introduce my education background!
 Through undergraduate and master program, I've learned a lot of statistic knowledge,especially learning a lot of interesting concepts and visualized methods taught by kostis.
 So this time I will bring some more interesting things to introduce statistics and data visualization.
 
-```{r echo=FALSE, fig.cap="What can r do", fig.showtext=TRUEout.width = '30%'}
+```{r echo=FALSE, fig.showtext=TRUEout.width = '30%'}
 knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811a802ddc524c3271302893a149/a7003/images/bandthree2.png")
 ```
 
@@ -70,11 +70,14 @@ Shanghai
 ```
 
 
+\n
+
+
 
 >Then comes to my internship experience,with a focus on investment banking, I had a lot of previous experience working in IBD departments.
 
 
-## **<span style="color:grey;">Internship Experience</span>**
+## **<span style="color:white;">Internship Experience</span>**
 
 I have been an investment banking intern in Huatai United Securities and Haitong Securities respectively, and welcome to add my linkedin to know more about my internship experience in these two companies!
 
@@ -90,7 +93,6 @@ So during this period I have done a lot information collection work and analysis
     -  Conducted the desk research and organized the interview records to better understand the industry, formed the logic and structure of the research, compared the Chinese market with the maturer American market; analyzed the development process and core competence of leading food supply chain company Sysco; foresaw the future trend of Chinese market
 
 
-![ ](/Users/xuchengchen/Desktop/huatai_united.jpg)
 
 
 
