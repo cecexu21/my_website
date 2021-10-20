@@ -21,11 +21,11 @@ params:
     buttonClear: Clear
     buttonSend: Send message
     email:
-      - email: xu_chengchen@outlook.com
+      - email: xu_chengchen@hotmail.com
         title: Email
     enable: yes
     phone:
-      - phone: (075) 3612-8229
+      - phone: (075) 1233-2342
         title: Phone
   custom_css: []
   custom_js: []
@@ -91,11 +91,11 @@ params:
         url: blogs/German_election_result
       - image: bikes.jpg
         subtitle: Do you know the rental circumstance of bikes in UK?
-        title: Excess rentals in TfL bike sharing
+        title: EXCESS RENTALS IN TFL BIKE SHARING
         url: blogs/BikesTFL
       - image: cpi.jpg
         subtitle: How has the CPI and its components changed over the last few years?
-        title: Secrets about CPI
+        title: SECRETS IN CPI 
         url: blogs/cpi_changes
       - image: pic05.jpg
         subtitle: Ipsum Dolor Sit Amet
