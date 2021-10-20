@@ -49,14 +49,16 @@ library(tinytex)
 
 We all like movies, right? But do directors themselves influence movie ratings? Or, maybe, just because of their preferences on genres? Or, anything else?
 
-```{r showing pricture, fig.align='center',cache=TRUE}
+```{r showing pricture, out.width='100%',fig.align='center',cache=TRUE}
 knitr::include_graphics("/img/Steven-Spielberg.jpg",error=FALSE)
 ```
 
 
-
-
 Recall the IMBD ratings data. We want to explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. In order to test it, we need to calculate confidence intervals for the mean ratings of these two directors and as we can see they overlap. 
+
+```{r showing pricture, out.width='100%',fig.align='center',cache=TRUE}
+knitr::include_graphics("/img/tim-burton.jpg",error=FALSE)
+```
 
 
 In addition, we will run a hpothesis test. We should use both the `t.test` command and the `infer` package to simulate from a null distribution, where you assume zero difference between the two.
@@ -69,7 +71,7 @@ Alternative Hypothesis- Spielberg and Burton have the distinct mean ratings.
 p-value- /alpha=0.05
 
 
-```{r load-movies-data, cache=TRUE}
+```{r load-movies-data, out.width='100%',cache=TRUE}
 movies <- read_csv(here::here("data", "movies.csv"))
 glimpse(movies)
 ```
@@ -77,7 +79,7 @@ Recall the IMBD ratings data. I would like you to explore whether the mean IMDB 
 
 Your R code and analysis should go here. If you want to insert a blank chunk of R code you can just hit `Ctrl/Cmd+Alt+I` 
 
-```{r IMDB ratings analysis, cache=TRUE}
+```{r IMDB ratings analysis,out.width='100%', cache=TRUE}
 
 #exploring whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not
 movies_new<-movies %>%

@@ -52,8 +52,8 @@ library(tidyquant)
 
 We want to recrate the following Consumer Price Index graph: 
 
-```{r cpi_all_components_since_2016, cache=TRUE}
-knitr::include_graphics(here::here("images", "cpi_components_since_2016.png"), error = FALSE)
+```{r cpi_all_components_since_2016,out.width='100%', cache=TRUE}
+knitr::include_graphics("/img/cpi.png", error = FALSE)
 ```
 
 ## Cleaning/modifying data and building chart
@@ -72,7 +72,7 @@ When generating the final plot, we notice that the order of graph needed to be c
 
 After doing all the steps mentioned above, we can create a plot by facet_wrap().
 
-```{r cpi_plot,fig.width=8, fig.align='center',cache=TRUE}
+```{r cpi_plot,fig.width=8, out.width='100%',fig.align='center',cache=TRUE}
   
 #using dataset given in github under "data" file holder
 start <- "Consumer Price Index for All Urban Consumers: "
@@ -130,9 +130,10 @@ ggplot(cpi_new_2,aes(x=date,y=year_change,color=as.factor(positive)))+
    facet_wrap(~fct_relevel(title,component_order),scales="free") #faceting by CPI componenent and setting the scale free to maximize the area on which the YoY changes are displayed
 
 ```
+
 # Could you find some trends of changes in cpi?
 
-During this part, we will focus on some part
+During this part, we will focus on parts of components like Housing, Transportation,etc..
 ```{r cpi_plot_4_components, fig.width=8, cache=TRUE}
 ggplot(subset(cpi_new_2,title %in% c("Housing","Transportation", "Food and beverages","Medical care", "Education and communication", "Recreation", "Apparel")),aes(x=date,y=year_change,color=as.factor(positive)))+
    geom_point(size=0.2)+
