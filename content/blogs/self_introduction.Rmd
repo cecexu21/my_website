@@ -34,7 +34,7 @@ library(tidyquant)
 library(rvest) # to scrape wikipedia page
 ```
 
-> Hi, my name is Chengchen Xu, but you can also call me Cissie Xu, this is totally up to you!\n
+> Hi, my name is Chengchen Xu, but you can also call me Cissie Xu, this is totally up to you! \n\
 Currently, I'm studying in MFA program to learn more finance-oriented stuff. Before I started my journey in LBS, I studied in Fudan University for four years and had a great exchange studying time in CA, USA. (The photo above is the one that shot in Los Angeles.) Hope this picture can make you happy all the time!
 
 
@@ -57,7 +57,7 @@ So this time I will bring some more interesting things to introduce statistics a
 knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811a802ddc524c3271302893a149/a7003/images/bandthree2.png")
 ```
 
-R can also be used to show my hometown, Shanghai! 
+**R can also be used to show my hometown, Shanghai! **
 
 
 ```{r}
@@ -70,11 +70,11 @@ Shanghai
 ```
 
 
-\n
+\n\
 
 
 
->Then comes to my internship experience,with a focus on investment banking, I had a lot of previous experience working in IBD departments.
+> Then comes to my internship experience,with a focus on investment banking, I had a lot of previous experience working in IBD departments.
 
 
 ## **<span style="color:white;">Internship Experience</span>**
