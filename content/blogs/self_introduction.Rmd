@@ -60,7 +60,7 @@ knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811a8
 **R can also be used to show my hometown, Shanghai! **
 
 
-```{r}
+```{r, echo=FALSE}
 library(leaflet)
 
 Shanghai <- leaflet() %>% 
@@ -80,7 +80,7 @@ Then comes to my internship experience, with a focus on investment banking, I ha
 # **<span style="color:white;">Internship Experience</span>**
 
 I have been an investment banking intern in [Huatai United Securities](/Users/xuchengchen/Desktop/huatai_united.jpg) and Haitong Securities respectively, and welcome to add my linkedin to know more about my internship experience in these two companies!
-![ ](/Users/xuchengchen/Desktop/huatai_united.jpg)
+
 
 So during this period I have done a lot information collection work and analysis work such as procurement record analysis, gradually sharpened my logic thinking ability and also Microsoft office skills.
 
@@ -96,8 +96,14 @@ So during this period I have done a lot information collection work and analysis
 
 -  Prepared project documents including reference cases, refinancing policy insights and pitch book for a ready-to-refinance IA household appliances company in China listed in A share market 
 
+
 # **<span style="color:light yellow;">Interests and Additional Information </span>**
 
+$\checkmark$  Achievements: Owned a social account specialized in statistical analysis and data visualization, winning more than 4,000 followers on Weibo, attracting more than 120,000 PV for one article 
+
+$\checkmark$ Language:  Mandarin (Native), English (Fluent) 
+
+$\checkmark$ Interests: Popular Music, cooking for family and friends, hiking with friends to explore new things!
 
 
 
