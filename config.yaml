@@ -101,10 +101,10 @@ params:
         subtitle: How are GDP component changing among countries?
         title: GDP:An Economy’s All
         url: blogs/GDP_components
-      - image: pic06.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Etiam
-        url: blogs/ipsum
+      - image: movie.jpg
+        subtitle: Is there any rating differences between two directors?
+        title: Director preferences
+        url: blogs/imdb_ratings
   two:
     buttonText: Get Started
     enable: yes

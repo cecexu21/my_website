@@ -147,8 +147,10 @@ theme(axis.title.y = element_text(size = 12, angle = 90)) +NULL
 P
 
 ```
+\n\
+## Visualizing the plot
 To create a more visualized plot, we can use ggplotly to show details of every party's vote in every specific time.
-```{r making_challenge_2_plot_3, fig.show='hold' ,out.width='40%', fig.align='center',warnings= FALSE, message=FALSE, cache=TRUE}
+```{r making_challenge_2_plot_3, fig.show='hold' ,out.width='40%',fig.align='center',warnings= FALSE, message=FALSE, cache=TRUE}
 ggplotly(P,dynamicTicks = TRUE)
 ```
 To know more about [German parties' vote result on different posters](https://graphics.reuters.com/GERMANY-ELECTION/POLLS/jnpweekxypw/)

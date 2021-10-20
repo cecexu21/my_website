@@ -1,0 +1,186 @@
+---
+title: "Steven Spielberg and Tim Burton: Whose movie rating is higher?"
+date: '2021-10-19'
+description: Differences between ratings of two directors
+draft: no
+image: movie_dune.jpg
+keywords: ''
+slug: imdb_ratings
+categories:
+- ''
+- ''
+---
+
+---
+
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
+
+
+```{r load-libraries, echo=FALSE, cache=TRUE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(mosaic)
+library(ggthemes)
+library(GGally)
+library(readxl)
+library(here)
+library(skimr)
+library(janitor)
+library(broom)
+library(tidyquant)
+library(infer)
+library(openintro)
+library(tinytex)
+```
+# IMDB ratings: Differences between directors
+
+We all like movies, right? But do directors influence movie ratings? Or, genres? Or, anything else?
+![](https://github.com/cecexu21/my_website/blob/main/steven.jpeg)
+
+
+Recall the IMBD ratings data. We want to explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. In order to test it, we need to calculate confidence intervals for the mean ratings of these two directors and as we can see they overlap. 
+
+
+```{r directors, echo=FALSE, out.width="100%"}
+knitr::include_graphics(here::here("images", "directors.png"), error = FALSE)
+```
+
+
+In addition, we will run a hpothesis test. We should use both the `t.test` command and the `infer` package to simulate from a null distribution, where you assume zero difference between the two.
+
+> Before anything, write down the null and alternative hypotheses, as well as the resulting test statistic and the associated t-stat or p-value. At the end of the day, what do you conclude?
+
+
+Null Hypothesis- both Spielberg and Burton have the same mean rating.
+Alternative Hypothesis- Spielberg and Burton have the distinct mean ratings.
+p-value- /alpha=0.05
+
+
+```{r load-movies-data, cache=TRUE}
+movies <- read_csv(here::here("data", "movies.csv"))
+glimpse(movies)
+```
+Recall the IMBD ratings data. I would like you to explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. I have already calculated the confidence intervals for the mean ratings of these two directors and as you can see they overlap. 
+
+Your R code and analysis should go here. If you want to insert a blank chunk of R code you can just hit `Ctrl/Cmd+Alt+I` 
+
+```{r IMDB ratings analysis, cache=TRUE}
+
+#exploring whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not
+movies_new<-movies %>%
+  filter(director %in% c("Steven Spielberg","Tim Burton"))%>%
+  group_by(director) 
+mean_movies_director<- movies_new %>%
+  summarise(mean_rating=mean(rating))
+mean_movies_director
+
+#comparing two confidence intervals for two directors-Steven Spielberg and Tim Burton
+ci_rating<- movies %>%
+  filter(director %in% c("Steven Spielberg","Tim Burton"))%>%
+  group_by(director) %>%
+  
+  #compute the statistics we want to analyse
+  summarize(mean_rating=mean(rating),
+            median_rating=median(rating,na.rm=TRUE),
+            sd_rating=sd(rating),
+                  count=n(),
+                  se_rating=sd_rating/sqrt(count),
+            max_rating=max(rating),
+            min_rating=min(rating),
+            t_critical=qt(0.975,count-1),
+            margin_of_error=t_critical*se_rating,
+            lower_ci_95=mean_rating-t_critical*se_rating,
+            higher_ci_95=mean_rating+t_critical*se_rating)
+ci_rating
+
+#having a t test
+t.test(rating~director,data=movies_new)
+
+#using infer package
+direc_rating_diff <- movies_new %>%
+  specify(rating ~ director) %>%
+  calculate(stat = "diff in means",order= c("Steven Spielberg", "Tim Burton"))
+
+null_dist_movies <- movies_new %>%
+  #specify variables
+  specify(rating ~ director) %>%
+  
+  #assume independence, i.e, there is no difference
+  hypothesize(null = "independence") %>%
+  
+  #generate 1000 reps, of type "permute"
+  generate(reps = 1000, type = "permute") %>%
+  
+  #calculate statistic of difference, namely "diff in means"
+  calculate(stat = "diff in means",order= c("Steven Spielberg", "Tim Burton"))
+
+#plot the histogram
+ggplot(data = null_dist_movies, aes(x = stat)) +
+  geom_histogram(bins = 30)+
+  theme_bw()+
+  labs(title="Null distance movies")
+  
+null_dist_movies %>% 
+  visualize() +
+  shade_p_value(obs_stat = direc_rating_diff, direction = "two-sided")
+
+#compute the p-value
+null_dist_movies %>%
+  get_p_value(obs_stat = direc_rating_diff, direction = "two_sided")
+```
+
+
+```{r confidence_interval comp, cache=TRUE, out.width="100%"}
+#replicating the graph showing confidence interval of movie ratings directed by two directors
+ggplot(ci_rating, aes(x=reorder(director, mean_rating), y=mean_rating, colour=director)) +
+  geom_point(size=5) +
+  geom_errorbar(width=.1, aes(ymin=lower_ci_95, ymax=higher_ci_95),size=3) + 
+  geom_text(aes(x=reorder(director, mean_rating),
+                y=mean_rating,
+                label=round(mean_rating,2)),
+            size=4,
+            vjust=-1,
+            colour="black")+
+  geom_text(aes(x=reorder(director, mean_rating),
+                y=lower_ci_95,
+                label=round(lower_ci_95,2)),
+            size=3,
+            vjust=-1,
+            colour="black")+
+  geom_text(aes(x=reorder(director, mean_rating),
+                y=higher_ci_95,
+                label=round(higher_ci_95,2)),
+            size=3,
+            vjust=-1,
+            colour="black")+
+  geom_rect(aes(xmin=0,xmax=3,ymin = 7.27, ymax=7.33), fill = "grey",colour="light grey",alpha=0.55)+
+  labs(x=" ",
+       y= "Mean IMDB Rating", 
+       title="Do Spielberg and Burton have the same mean IMDB ratings?",
+       subtitle="95% confidence intervals overlap") + 
+  theme_bw()+
+  coord_flip()+
+  theme(legend.position = "none",
+        plot.title=element_text(size=10,face ="bold"),
+        plot.subtitle = element_text(size=9,face="bold"),
+        axis.text.x = element_text(size=6),
+        axis.text.y= element_text(size=6),
+        axis.title.x =element_text(size=8,face="bold"),
+        strip.text.x = element_text(size=8),
+        strip.text.y=element_text(size=8),
+        aspect.ratio=0.6)
+
+```
