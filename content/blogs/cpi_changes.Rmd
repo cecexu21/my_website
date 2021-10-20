@@ -47,6 +47,7 @@ library(tidyquant)
 
 
 ```
+
 # How has the CPI and its components changed over the last few years?
 
 We want to recrate the following Consumer Price Index graph: 
@@ -54,11 +55,12 @@ We want to recrate the following Consumer Price Index graph:
 ```{r cpi_all_components_since_2016, cache=TRUE}
 knitr::include_graphics(here::here("images", "cpi_components_since_2016.png"), error = FALSE)
 ```
+
 ##Cleaning/modifying data and building chart
 we had some issues pulling data directly from the FED so we downloaded an excel file instead. 
 
-```{r cpi_plot, ,cache=TRUE}
-
+```{r cpi_plot,fig.width=8, fig.align='center',cache=TRUE}
+  
 #using dataset given in github under "data" file holder
 start <- "Consumer Price Index for All Urban Consumers: "
 end <- " in U.S. City Average"
@@ -116,7 +118,7 @@ ggplot(cpi_new_2,aes(x=date,y=year_change,color=as.factor(positive)))+
 
 ```
 
-```{r cpi_plot_7_components, cache=TRUE}
+```{r cpi_plot_4_components, fig.width=8, cache=TRUE}
 ggplot(subset(cpi_new_2,title %in% c("Housing","Transportation", "Food and beverages","Medical care", "Education and communication", "Recreation", "Apparel")),aes(x=date,y=year_change,color=as.factor(positive)))+
    geom_point(size=0.2)+
   scale_color_manual(values=c('blue2','red'))+

@@ -18,8 +18,8 @@ categories:
 <h1>How has the CPI and its components changed over the last few years?</h1>
 <p>We want to recrate the following Consumer Price Index graph:</p>
 <pre class="r"><code>knitr::include_graphics(here::here(&quot;images&quot;, &quot;cpi_components_since_2016.png&quot;), error = FALSE)</code></pre>
-<p><img src="/Users/xuchengchen/Desktop/my_website/images/cpi_components_since_2016.png" style="display: block; margin: auto;" />
-##Cleaning/modifying data and building chart
+<p><img src="/Users/xuchengchen/Desktop/my_website/images/cpi_components_since_2016.png" style="display: block; margin: auto;" /></p>
+<p>##Cleaning/modifying data and building chart
 we had some issues pulling data directly from the FED so we downloaded an excel file instead.</p>
 <pre class="r"><code>#using dataset given in github under &quot;data&quot; file holder
 start &lt;- &quot;Consumer Price Index for All Urban Consumers: &quot;
@@ -75,7 +75,7 @@ ggplot(cpi_new_2,aes(x=date,y=year_change,color=as.factor(positive)))+
         https://fredaccount.stlouisfed/org/public/datalist/843&quot;)+
    scale_y_continuous(labels = scales::percent)+ #setting a scale in percent for increased readibility
    facet_wrap(~fct_relevel(title,component_order),scales=&quot;free&quot;) #faceting by CPI componenent and setting the scale free to maximize the area on which the YoY changes are displayed</code></pre>
-<p><img src="/blogs/cpi_changes_files/figure-html/cpi_plot,%20-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/cpi_changes_files/figure-html/cpi_plot-1.png" width="768" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>ggplot(subset(cpi_new_2,title %in% c(&quot;Housing&quot;,&quot;Transportation&quot;, &quot;Food and beverages&quot;,&quot;Medical care&quot;, &quot;Education and communication&quot;, &quot;Recreation&quot;, &quot;Apparel&quot;)),aes(x=date,y=year_change,color=as.factor(positive)))+
    geom_point(size=0.2)+
   scale_color_manual(values=c(&#39;blue2&#39;,&#39;red&#39;))+
@@ -102,5 +102,5 @@ ggplot(cpi_new_2,aes(x=date,y=year_change,color=as.factor(positive)))+
         https://fredaccount.stlouisfed/org/public/datalist/843&quot;)+
    scale_y_continuous(labels = scales::percent)+
   facet_wrap(~title,scales=&quot;free&quot;)</code></pre>
-<p><img src="/blogs/cpi_changes_files/figure-html/cpi_plot_7_components-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/cpi_changes_files/figure-html/cpi_plot_4_components-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
