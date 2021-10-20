@@ -3,7 +3,7 @@ title: "Which party is leading the race?"
 date: '2021-10-19'
 description: Excess rentals in TfL bike sharing
 draft: no
-image: bikesTFL.jpg
+image: bikesTFL.jpeg
 keywords: ''
 slug: BikesTFL
 categories:
@@ -49,7 +49,9 @@ Looking at the facet grid chart with the number of bikes hired by month and year
 <div id="reproducing-graphs" class="section level2">
 <h2>Reproducing graphs</h2>
 <p>We will reproduce the following two graphs.</p>
+<pre class="r"><code>knitr::include_graphics(here::here(&quot;images&quot;, &quot;tfl_monthly.png&quot;), error = FALSE)</code></pre>
 <p><img src="/Users/xuchengchen/Desktop/my_website/images/tfl_monthly.png" width="100%" /></p>
+<pre class="r"><code>knitr::include_graphics(here::here(&quot;images&quot;, &quot;tfl_weekly.png&quot;), error = FALSE)</code></pre>
 <p><img src="/Users/xuchengchen/Desktop/my_website/images/tfl_weekly.png" width="100%" /></p>
 <p>We are creating the first plot:</p>
 <pre class="r"><code>data_bike &lt;-bike %&gt;%
