@@ -97,10 +97,10 @@ params:
         subtitle: How has the CPI and its components changed over the last few years?
         title: SECRETS IN CPI 
         url: blogs/cpi_changes
-      - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Consequat
-        url: blogs/ipsum
+      - image: gdp.jpg
+        subtitle: How are GDP component changing among countries?
+        title: GDP: An Economy’s All
+        url: blogs/GDP_components
       - image: pic06.jpg
         subtitle: Feugiat Amet Tempus
         title: Etiam

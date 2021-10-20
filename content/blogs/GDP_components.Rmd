@@ -1,0 +1,358 @@
+---
+title: "GDP components in Different Countries ?"
+date: '2021-10-19'
+description: DP components over time and among countries 
+draft: no
+image: gdp.jpg
+keywords: ''
+slug: GDP_components
+categories:
+- ''
+- ''
+---
+# GDP components over time and among countries 
+
+This time, we want to anaylze trends of [GDP comopents over time and among countries] (https://www.statista.com/statistics/264653/proportions-of-economic-sectors-in-gross-domestic-product-gdp-in-selected-countries/)
+
+
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
+
+
+```{r load-libraries, echo=FALSE, cache=TRUE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(mosaic)
+library(ggthemes)
+library(GGally)
+library(readxl)
+library(here)
+library(skimr)
+library(janitor)
+library(broom)
+library(tidyquant)
+library(infer)
+library(openintro)
+library(tinytex)
+```
+```{r read_GDP_data, cache=TRUE}
+
+UN_GDP_data  <- read_excel(here::here("data", "Download-GDPconstant-USD-countries.xlsx"), # Excel filename
+                sheet="Download-GDPconstant-USD-countr", # Sheet name
+                skip=2) # Number of rows to skip
+
+```
+
+The first thing you need to do is to tidy the data, as it is in wide format and you must make it into long, tidy format. Please express all figures in billions (divide values by `1e9`, or $10^9$), and you want to rename the indicators into something shorter.
+
+```{r reshape_GDP_data, cache=TRUE}
+
+#convert the data to long format
+tidy_GDP_data  <-  pivot_longer(UN_GDP_data, cols = 4:51, #using the the columns 4 to 51 to make a long table
+                                names_to = "Years",
+                                values_to = "Values") 
+                
+#clean the data - values to billions, set the variables properly and rename indicators
+tidy_GDP_data<- tidy_GDP_data %>% 
+  mutate(Values=Values/10^9) %>%
+  mutate(across(Years,as.numeric)) %>% #set "Years" as a numeric variable
+  mutate(across(Country,as.character)) %>%
+  rename(Indicator=IndicatorName) 
+
+#check which indicators and countries to change
+tidy_GDP_data %>% distinct(Indicator)
+tidy_GDP_data %>% distinct(Country)
+
+#we get an error message when recoding in pipe, so we use base R based on suggestions from StackOverFlow 
+#the error we get is <<Error in UseMethod("recode") : no applicable method for 'recode' applied to an object of class "c('tbl_df', 'tbl', 'data.frame')">>
+
+#rename the indicators using the recode function
+tidy_GDP_data$Indicator <- recode(tidy_GDP_data$Indicator, 
+                                  "Agriculture, hunting, forestry, fishing (ISIC A-B)"="Agriculture",
+                                  "Changes in inventories"="Inventory changes",
+                                  "Construction (ISIC F)"="Construction",
+                                  "Exports of goods and services"="Exports",
+                                  "Final consumption expenditure"="Final consumption",
+                                  "General government final consumption expenditure"="Government expenditure",
+                                 # "Gross Domestic Product (GDP)"="GPD",
+                                  "Gross fixed capital formation (including Acquisitions less disposals of valuables)"="Fixed capital formation",
+                                  "Household consumption expenditure (including Non-profit institutions serving households)"="Household expenditure",
+                                  "Imports of goods and services"="Imports",
+                                  "Manufacturing (ISIC D)"="Manufacturing",
+                                  "Other Activities (ISIC J-P)"="Other",
+                                  "Total Value Added"="Value added",
+                                  "Transport, storage and communication (ISIC I)"="Transport",
+                                  "Wholesale, retail trade, restaurants and hotels (ISIC G-H)"="Wholesale")
+
+tidy_GDP_data <- tidy_GDP_data %>% 
+  select("Country", "Indicator", "Years", "Values")
+
+# Let us compare GDP components for these 3 countries
+country_list <- c("United States","India", "Germany")
+
+#creat a data frame filtered with the vector containing the three countries we want to compare
+tidy_GDP_data_3 <- tidy_GDP_data %>%
+  filter(Country %in% country_list)
+```
+
+First, we will create a plot showing GDP and its component from 1970 to 2010.
+
+```{r gdp1_plot, cache=TRUE, out.width="100%"}
+
+#create the vector of the indicators we want 
+indicator_list_1 <- c("Gross capital formation", "Exports", "Government expenditure", "Household expenditure", "Imports")
+
+#selecting our tidy data frame that has been filtered for the Germany, India and the US
+tidy_GDP_data_3 %>%
+  
+  #filter the indicators with the vector we created
+  filter(Indicator %in% indicator_list_1) %>%
+  
+  #plot the graph with the right aesthetics
+  ggplot(aes(x = Years, y = Values, colour = Indicator))+
+  
+  #group by indicator
+  geom_line(aes(group=Indicator))+
+  
+  #facet by country and set the column number to 3
+  facet_wrap(~Country,ncol=3)+
+  
+  #set the proper theme, titles and caption
+  theme_bw()+
+  labs(title="GDP components over time",
+       subtitle = "In constant 2010 USD",
+       color = "Components of  GDP",
+       y="Billion US$",
+       x="")
+```
+
+Secondly, recall that GDP is the sum of Household Expenditure (Consumption *C*), Gross Capital Formation (business investment *I*), Government Expenditure (G) and Net Exports (exports - imports). Even though there is an indicator `Gross Domestic Product (GDP)` in your dataframe, we will calculate it given its components discussed above to have a double check.
+
+> What is the % difference between what you calculated as GDP and the GDP figure included in the dataframe?
+
+--> OUR ANSWER BELOW <--
+
+```{r GDP differences, cache=TRUE}
+
+library(tidyverse)
+#creating vector of the countries we want to analyse
+country_list_3 <- c("Germany","India","United States")
+
+#create a vector of the of indicators which we will then widen in our pivot_wider
+indicator_list_2 <- c("Gross capital formation", "Exports", "Government expenditure", "Household expenditure", "Imports","Gross Domestic Product (GDP)")
+
+#create a new dataframe
+tidy_GDP_data_6 <- tidy_GDP_data %>%
+  
+  #filter for the indicators and countries that are of interest to us
+  filter(Country %in% country_list_3) %>%
+  filter(Indicator %in% indicator_list_2) %>%
+  
+  #pivot wider with the indicators we filtered to then compute the Net Exports and the proportion of GDP component
+  pivot_wider(names_from = Indicator,
+              values_from = Values) %>%
+  
+  #create new columns to compute the Net Exports so as to be able to compare the GDP with the four components (G + I + C + (X-M)) to the GDP indicator already embedded in the original UN file
+  mutate("Net Exports" = `Exports` - `Imports`,
+         "Total GDP" = `Net Exports` + `Gross capital formation` + `Government expenditure` + `Household expenditure`,
+         "GDP Difference"= `Total GDP`-`Gross Domestic Product (GDP)`,
+         "GDP Percentage Change"= 100*`GDP Difference`/`Total GDP`)%>%
+
+  #make the table long again to stack the indicators together
+  pivot_longer(cols = 3:12, #using the the columns 2 to 13 to make a long table
+               names_to = "Indicator",
+               values_to = "Values")%>%
+  
+  #filter for the indicators of interest to us
+  filter(Indicator %in% c("Total GDP","Gross Domestic Product (GDP)", "GDP Difference", "GDP Percentage Change")) %>% 
+  pivot_wider(names_from = Years,
+              values_from = Values)
+      
+tidy_GDP_data_7 <-  tidy_GDP_data_6 %>% 
+  filter(Indicator == "GDP Percentage Change") %>% 
+
+  #pivot longer to compare the differences of GDP for the three countries we are interest in
+  pivot_longer(cols = 3:50, #using the the columns 2 to 51 to make a long table
+               names_to = "Years",
+               values_to = "Values")%>%
+  pivot_wider(names_from = Country,
+              values_from = Values)
+  
+  #compute statistics regarding the GDP difference for Germany
+  diff_germany<- tidy_GDP_data_7 %>% 
+  summarise(sample_size=n(),
+            t_critical=qt(0.975,sample_size-1),
+            mean_change_germany=mean(Germany),
+            sd_change_germany=sd(Germany),
+            se_change_germany=sd_change_germany/sqrt(sample_size),
+            lower_ci_95=mean_change_germany-t_critical*se_change_germany,
+            higher_ci_95=mean_change_germany+t_critical*se_change_germany)
+
+  #compute statistics regarding the GDP difference for India
+  diff_india<- tidy_GDP_data_7 %>% 
+  summarise(sample_size=n(),
+            t_critical=qt(0.975,sample_size-1),
+            mean_change_india=mean(India),
+            sd_change_india=sd(India),
+            se_change_india=sd_change_india/sqrt(sample_size),
+            lower_ci_95=mean_change_india-t_critical*se_change_india,
+            higher_ci_95=mean_change_india+t_critical*se_change_india)
+  
+  #compute statistics regarding the GDP difference for the US
+  diff_US<- tidy_GDP_data_7 %>% 
+    summarise(sample_size=n(),
+            t_critical=qt(0.975,sample_size-1),
+            mean_change_US=mean(`United States`),
+            sd_change_US=sd(`United States`),
+            se_change_US=sd_change_US/sqrt(sample_size),
+            lower_ci_95=mean_change_US-t_critical*se_change_US,
+            higher_ci_95=mean_change_US+t_critical*se_change_US)
+
+#print the differences
+diff_germany
+diff_india
+diff_US
+```
+
+From the above, we can see an average difference of 1.11% for Germany, 0.08% for India, and 1.24% for the US, which implies that either the governments typically released underestimates, or we are lacking additional data that would cause such consistent errors.
+
+Then we will generate a new plot to show GDP and its breakdown at constant 2010 prices in US Dollars among countries.
+
+```{r gdp2_plot_2, out.width="100%", cache=TRUE}
+#create a vector of the of indicators which we will then widen in our pivot_wider
+indicator_list_2 <- c("Gross capital formation", "Exports", "Government expenditure", "Household expenditure", "Imports")
+
+#create a vector of the proportion of each GDP component which we will then lengthen in our pivot_longer. 
+#Note: we add a space after each GDP component weight' name to differentiate them of the indicators that already exist while having them display the same way.
+indicator_list_3 <- c("Gross capital formation ", "Net Exports ", "Government expenditure ", "Household expenditure ")
+
+#create a new dataframe for the dataframe already filtered with Germany, India and the US
+tidy_GDP_data_4 <- tidy_GDP_data_3 %>%
+  
+  #filter for the indicators that are of interest to us
+  filter(Indicator %in% indicator_list_2) %>%
+  
+  #pivot wider with the indicators we filtered to then compute the Net Exports and the proportion of GDP component
+  pivot_wider(names_from = Indicator,
+              values_from = Values) %>%
+  
+  #compute the Net Exports, the total GDP and the weights of each GDP component in the total GDP.
+  mutate("Net Exports" = `Exports` - `Imports`,
+         "Total GDP" = `Net Exports` + `Gross capital formation` + `Government expenditure` + `Household expenditure`,
+         "Gross capital formation " = `Gross capital formation`/`Total GDP`,
+         "Government expenditure " = `Government expenditure`/`Total GDP`,
+         "Net Exports " = `Net Exports`/`Total GDP`,
+         "Household expenditure " = `Household expenditure`/`Total GDP`)%>%
+
+  #make the table long again to be able to plot the weights of each GDP component
+  pivot_longer(cols = 4:13, #using the the columns 2 to 13 to make a long table
+               names_to = "Indicator",
+               values_to = "Values")%>%
+  filter(Indicator %in% indicator_list_3)
+
+#load the dataframe that contains the new variable Net Exports and the weights of the 4 variables 
+tidy_GDP_data_4 %>%
+ggplot(aes(x = Years, y = Values, colour = Indicator))+
+  
+  #create a line graph, group by month and remove the legend 
+  geom_line(aes(group=Indicator))+
+  
+  #facet by country
+  facet_wrap(~Country,ncol=3)+
+  
+  #change our y-axis for percentage
+  scale_y_continuous(labels = scales::percent)+
+
+  #set the proper theme and titles
+  theme_bw()+
+  labs(title="GDP and its breakdown at constant 2010 prices in US Dollars",
+       color = "",
+       y="proportion",
+       x="",
+       caption="Source: United Nations, https://unstats.un.org/unsd/naama/Downloads")+
+  
+  #remove the legend's title
+  scale_color_discrete(name="")
+```
+
+
+
+Regarding Germany, household expenditure contributes the most to the Country’s GDP during 1970 to 2016 followed by exports and imports. The government expenditure and gross capital formation reported the same trends with a very small growth during the period. Concerning India, household expenditure also accounts the most of its GDP and showed an increasing trend since 1970.  Other contributors reported flat trends during 1970 to 2000 and started to grow after that. The U.S.’s GDP reported a substantially growth comparing to the other two countries especially on household expenditures that increased almost five times during the periods.
+
+
+We plotted below a chart to analyse the breakdown of each of our countries' GDP (China, Norway, United Kingdom, Thailand, Italy and France, these are the places where our team members come from).
+
+
+
+```{r gdp_plot_3, cache=TRUE}
+#creating vector of the new countries we want to analyse
+country_list_2 <- c("China", "Norway", "United Kingdom", "Thailand", "Italy", "France")
+
+#create a vector of the of indicators which we will then widen in our pivot_wider
+indicator_list_2 <- c("Gross capital formation", "Exports", "Government expenditure", "Household expenditure", "Imports")
+
+#create a vector of the proportion of each GDP component which we will then lengthen in our pivot_longer. 
+#Note: we add a space after each GDP component weight' name to differentiate them of the indicators that already exist while having them display the same way.
+indicator_list_3 <- c("Gross capital formation ", "Net Exports ", "Government expenditure ", "Household expenditure ")
+
+#create a new dataframe for the dataframe already filtered with Germany, India and the US
+tidy_GDP_data_5 <- tidy_GDP_data %>%
+  
+  #filter for the indicators that are of interest to us
+  filter(Country %in% country_list_2) %>%
+  filter(Indicator %in% indicator_list_2) %>%
+  
+  #pivot wider with the indicators we filtered to then compute the Net Exports and the proportion of GDP component
+  pivot_wider(names_from = Indicator,
+              values_from = Values) %>%
+  
+  #compute the Net Exports, the total GDP and the weights of each GDP component in the total GDP.
+  mutate("Net Exports" = `Exports` - `Imports`,
+         "Total GDP" = `Net Exports` + `Gross capital formation` + `Government expenditure` + `Household expenditure`,
+         "Gross capital formation " = `Gross capital formation`/`Total GDP`,
+         "Government expenditure " = `Government expenditure`/`Total GDP`,
+         "Net Exports " = `Net Exports`/`Total GDP`,
+         "Household expenditure " = `Household expenditure`/`Total GDP`)%>%
+
+  #make the table long again to be able to plot the weights of each GDP component
+  pivot_longer(cols = 4:13, #using the the columns 2 to 13 to make a long table
+               names_to = "Indicator",
+               values_to = "Values")%>%
+  filter(Indicator %in% indicator_list_3)
+
+#load the dataframe that contains the new variable Net Exports and the weights of the 4 variables 
+tidy_GDP_data_5 %>%
+ggplot(aes(x = Years, y = Values, colour = Indicator))+
+  
+  #create a line graph, group by month and remove the legend 
+  geom_line(aes(group=Indicator))+
+  
+  #facet by country
+  facet_wrap(~Country,ncol=3)+
+  
+  #change our y-axis for percentage
+  scale_y_continuous(labels = scales::percent)+
+
+  #set the proper theme and titles
+  theme_bw()+
+  labs(title="GDP and its breakdown at constant 2010 prices in US Dollars",
+       color = "",
+       y="proportion",
+       x="",
+       caption="Source: United Nations, https://unstats.un.org/unsd/naama/Downloads")+
+  
+  #remove the legend's title
+  scale_color_discrete(name="")
+```
