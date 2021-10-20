@@ -61,7 +61,7 @@ knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811a8
 
 There are a lot of districts in SHANGHAI, such as Jingan District, Huangpu District, Xuhui District, Pudong District, etc..
 
-Firstlu, let us start the journey from viewing the whole city!
+Firstly, let us start the journey from viewing the whole city!
 
 
 ```{r, echo=FALSE}
@@ -73,8 +73,9 @@ Shanghai <- leaflet() %>%
 Shanghai
 ```
 
+\n\
 Now, let me introduces some fascinating destinations in Shanghai.
-There are five most famous destinations for tourist!
+There are five most famous destinations for tourists!
 
 ```{r,echo=FALSE}
 destinations<-data.frame(place=c("Shanghai Museum","Yu Garden","Shanghai Disneyland","The Bund","Shanghai Tower"),
@@ -82,9 +83,11 @@ destinations<-data.frame(place=c("Shanghai Museum","Yu Garden","Shanghai Disneyl
              lng=c(121.470550,121.48583139,121.6573, 121.505760,121.5064))
 kable(head(destinations),align="c")
 ```
+\n\
 
+To explore more information, please click on the leaves which will lead you to official websites!
 
-```{r, echo=FALSE}
+```{r, echo=FALSE,fig.align='center'}
 destination_location<-
   data.frame(lat=c(31.230278,31.22416577,31.1453, 31.233501,31.2503),
              lng=c(121.470550,121.48583139,121.6573, 121.505760,121.5064)) 
@@ -113,12 +116,8 @@ addTiles() %>%
 addMarkers(icon=Icons,popup=destination_sites)
 
 
-
-
-
-
 ```
-And also 
+
 
 
 \n\
@@ -152,13 +151,17 @@ So during this period I have done a lot information collection work and analysis
 - Language:  Mandarin (Native), English (Fluent) 
 
 - Interests: Popular Music, cooking for family and friends, hiking with friends to explore new things!
-    -  So, at the end of my introduction, I'm glad to share a song with you! 
 
-<audio controls>
-  <source src="https://www.youtube.com/watch?v=nSDgHBxUbVQ" type="audio/mp3">
-</audio>
 
-    
+**So, at the end of my introduction, I'm glad to share a song with you! **
+
+
+<video controls>
+  <source src="https://www.youtube.com/watch?v=nSDgHBxUbVQ" type="video/mp4">
+</video>
+
+<span style="font-size:12px;"> 
+*Photograph by Ed Sheeran*</span>
 
 
 
