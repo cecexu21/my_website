@@ -125,7 +125,10 @@ df1 <- data.frame(SPD, Union, AfD, FDP, Linke, Grune, day) #We create a new data
 df2 <- melt(df1, id.vars='day') #Then, we melt all the parties' polling scores and keep the date as the other variable.
 
 datatable(df2, options = list(pageLength = 20))
+```
 
+
+```{r making_challenge_2_plot, fig.show='hold' ,out.width='40%', fig.align='center',warnings= FALSE, message=FALSE, cache=TRUE}
 p<-ggplot(df2,aes(x = day, y = value, colour = variable)) + #We plot the days and the parties' polling scores. We colour the parties to be able to differentiate them.
   geom_point(shape=1) + #We make the points hollow to be able to better see the rolling average we'll create.
   geom_ma(spd_MA= SMA, n=14, linetype = 1, size=1) + #We create a 14-day rolling average following the Guardian's methodology. We change the linetype to a solid one so that it is more easily readable.
