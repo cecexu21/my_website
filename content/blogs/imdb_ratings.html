@@ -3,7 +3,7 @@ title: "Steven Spielberg and Tim Burton: Whose movie rating is higher?"
 date: '2021-10-19'
 description: Differences between ratings of two directors
 draft: no
-image: movie_dune.jpg
+image: movie_dune.jpeg
 keywords: ''
 slug: imdb_ratings
 categories:
@@ -17,8 +17,9 @@ categories:
 <hr />
 <div id="imdb-ratings-differences-between-directors" class="section level1">
 <h1>IMDB ratings: Differences between directors</h1>
-<p>We all like movies, right? But do directors influence movie ratings? Or, genres? Or, anything else?
-<img src="https://github.com/cecexu21/my_website/blob/main/steven.jpeg" /></p>
+<p>We all like movies, right? But do directors influence movie ratings? Or, genres? Or, anything else?</p>
+<pre class="r"><code>knitr::include_graphics(&quot;https://github.com/cecexu21/my_website/blob/main/steven.jpeg&quot;)</code></pre>
+<p><img src="https://github.com/cecexu21/my_website/blob/main/steven.jpeg" style="display: block; margin: auto;" /></p>
 <p>Recall the IMBD ratings data. We want to explore whether the mean IMDB rating for Steven Spielberg and Tim Burton are the same or not. In order to test it, we need to calculate confidence intervals for the mean ratings of these two directors and as we can see they overlap.</p>
 <p><img src="/Users/xuchengchen/Desktop/my_website/images/directors.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>In addition, we will run a hpothesis test. We should use both the <code>t.test</code> command and the <code>infer</code> package to simulate from a null distribution, where you assume zero difference between the two.</p>

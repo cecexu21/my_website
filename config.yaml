@@ -76,8 +76,8 @@ params:
       - name: Elements
         url: elements.html
     menu: Menu
-    subtitle: 
-    title: Cissie Xu'w website
+    subtitle: Welcome to my world!
+    title: Cissie Xu's website
   tiles:
     enable: yes
     showcase:
