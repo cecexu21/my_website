@@ -53,7 +53,7 @@ Since you have already seen the picture of me, **do you want to know more about 
 Through undergraduate and master program, I've learned a lot of statistic knowledge,especially learning a lot of interesting concepts and visualized methods taught by kostis.
 So this time I will bring some more interesting things to introduce statistics and data visualization.
 
-```{r echo=FALSE, fig.showtext=TRUEout.width = '30%'}
+```{r echo=FALSE, out.width = '30%'}
 knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811a802ddc524c3271302893a149/a7003/images/bandthree2.png")
 ```
 
