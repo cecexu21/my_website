@@ -60,14 +60,17 @@ knitr::include_graphics(here::here("images", "cpi_components_since_2016.png"), e
 
 By downloading cpi data published in FED directly, and then chanege the title into more readable ones by using strsplit functions.
 
-Then, we decide to do some data cleaning work to use lubridate() like ymd() or year() to create new variables and add to the original dataset.
+Then, we decide to do some data cleaning work such as using lubridate() like ymd() or year() to create new variables and then adding to the original dataset.
 
-Most importantly, we should calculate the yoy change through a function that is 
-yoy(t)=value(t)/value(t-1)*100%
+In order to help us track the change in all components of cpi, we should calculate the yoy change through a function that is,
 
-Then we will use ifelse function to create a new variable called positive, if yoy(t)>0, then it should be listed as postive, vice versa. Most importantly, we need to colour the spots according to whether it's postive or not. 
+yoy(t)=value(t)/value(t-1)*100%.
 
-However,
+Then we will use ifelse function to create a new variable called positive, if yoy(t)>0, then it should be listed as positive, vice versa. Most importantly, we need to colour the spots according to whether it's positive or not. 
+
+When generating the final plot, we notice that the order of graph needed to be changed in accordance to the maximum of year_changes of all components, but we need to put 'All items' in the first place.
+
+After doing all the steps mentioned above, we can create a plot by facet_wrap().
 
 ```{r cpi_plot,fig.width=8, fig.align='center',cache=TRUE}
   
