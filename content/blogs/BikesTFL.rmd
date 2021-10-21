@@ -97,18 +97,18 @@ This is a result of COVID lockdown, where bike usage patterns changed. We see th
 
 In order to show whether there is an apparent increasing trend during pandemic, we generate more visualized graph to show the actual rentals and expected rentals. 
 
-```{r tfl_absolute_monthly_change, echo=TRUE, out.width="100%", cache=TRUE}
+```{r tfl_absolute_monthly_change, echo=TRUE, out.width='80%', cache=TRUE}
 knitr::include_graphics("/img/tfl_monthly.png", error = FALSE)
 ```
 
 
-```{r tfl_percent_change, echo=TRUE, out.width="100%", cache=TRUE}
+```{r tfl_percent_change, echo=TRUE, out.width='80%', cache=TRUE}
 knitr::include_graphics("/img/tfl_weekly.png", error = FALSE)
 ```
 
 
 We are creating the first plot:
-```{r tfl_plot_1, cache=TRUE}
+```{r tfl_plot_1,out.width='80%', cache=TRUE}
 data_bike <-bike %>%
   group_by(month,year) %>% #grouping by month and year
   summarize(actual_rentals=mean(bikes_hired)) #selecting by the number of bikes hired to create the number of bikes hired by every month of each year
@@ -150,7 +150,7 @@ and calculated between 2016-2019",
 ```
 
 We are creating the second plot:
-```{r tfl_plot_2, cache=TRUE}
+```{r tfl_plot_2,out.width='80%', cache=TRUE}
 df4 <-bike %>%
   group_by(year,week) %>% #grouping by month
   filter(year>2015,week!=53) %>% #filtering for the year we are interested in and setting the number of weeks

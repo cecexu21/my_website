@@ -58,9 +58,9 @@ This is a result of COVID lockdown, where bike usage patterns changed. We see th
 <h2>Reproducing graphs</h2>
 <p>In order to show whether there is an apparent increasing trend during pandemic, we generate more visualized graph to show the actual rentals and expected rentals.</p>
 <pre class="r"><code>knitr::include_graphics(&quot;/img/tfl_monthly.png&quot;, error = FALSE)</code></pre>
-<p><img src="/img/tfl_monthly.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="/img/tfl_monthly.png" width="80%" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>knitr::include_graphics(&quot;/img/tfl_weekly.png&quot;, error = FALSE)</code></pre>
-<p><img src="/img/tfl_weekly.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="/img/tfl_weekly.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>We are creating the first plot:</p>
 <pre class="r"><code>data_bike &lt;-bike %&gt;%
   group_by(month,year) %&gt;% #grouping by month and year
@@ -99,7 +99,7 @@ and calculated between 2016-2019&quot;,
         plot.caption = element_text(size=4),
         panel.border = element_rect(colour=&quot;white&quot;),
         strip.background = element_rect(color=&quot;transparent&quot;,fill=&quot;transparent&quot;))</code></pre>
-<p><img src="/blogs/BikesTFL_files/figure-html/tfl_plot_1-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/BikesTFL_files/figure-html/tfl_plot_1-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>We are creating the second plot:</p>
 <pre class="r"><code>df4 &lt;-bike %&gt;%
   group_by(year,week) %&gt;% #grouping by month
@@ -143,7 +143,7 @@ calculated between 2016-2019&quot;,
         plot.caption = element_text(size=4),
         panel.border = element_rect(colour=&quot;white&quot;),
         strip.background = element_rect(color=&quot;transparent&quot;,fill=&quot;transparent&quot;))</code></pre>
-<p><img src="/blogs/BikesTFL_files/figure-html/tfl_plot_2-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/BikesTFL_files/figure-html/tfl_plot_2-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>When using a lot of data to estimate future performance of rentals in London. Here is a question for you to think about.</p>
 <p><strong>Should you use the mean or the median to calculate your expected rentals? Why?</strong><br />
 Answer is: We use mean because it is widely used in statistics world, since it can average all the variables and reduce the nagative effects of extreme numbers, which means outliers in our data.</p>
