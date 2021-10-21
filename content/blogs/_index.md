@@ -6,4 +6,4 @@ slug: blogs
 title: All blogs
 ---
 
-My blogs about technology and lifestyle.
+My blogs about lifestyle and statistics research in business world.
