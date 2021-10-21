@@ -57,7 +57,7 @@ params:
       - icon: fa-linkedin
         label: LinkedIn
         url: https://www.linkedin.com/in/chengchen-xu
-  image: lbs.jpg
+  image: ''
   name: Chengchen Xu
   navigation:
     button1:
