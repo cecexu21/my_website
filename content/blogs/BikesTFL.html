@@ -57,10 +57,10 @@ This is a result of COVID lockdown, where bike usage patterns changed. We see th
 <div id="reproducing-graphs" class="section level2">
 <h2>Reproducing graphs</h2>
 <p>In order to show whether there is an apparent increasing trend during pandemic, we generate more visualized graph to show the actual rentals and expected rentals.</p>
-<pre class="r"><code>knitr::include_graphics(here::here(&quot;images&quot;, &quot;tfl_monthly.png&quot;), error = FALSE)</code></pre>
-<p><img src="/Users/xuchengchen/Desktop/my_website/images/tfl_monthly.png" width="100%" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>knitr::include_graphics(here::here(&quot;images&quot;, &quot;tfl_weekly.png&quot;), error = FALSE)</code></pre>
-<p><img src="/Users/xuchengchen/Desktop/my_website/images/tfl_weekly.png" width="100%" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>knitr::include_graphics(&quot;/img/tfl_monthly.png&quot;, error = FALSE)</code></pre>
+<p><img src="/img/tfl_monthly.png" width="100%" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>knitr::include_graphics(&quot;/img/tfl_weekly.png&quot;, error = FALSE)</code></pre>
+<p><img src="/img/tfl_weekly.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>We are creating the first plot:</p>
 <pre class="r"><code>data_bike &lt;-bike %&gt;%
   group_by(month,year) %&gt;% #grouping by month and year

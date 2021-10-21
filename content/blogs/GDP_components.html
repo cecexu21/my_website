@@ -128,7 +128,7 @@ tidy_GDP_data_3 %&gt;%
        color = &quot;Components of  GDP&quot;,
        y=&quot;Billion US$&quot;,
        x=&quot;&quot;)</code></pre>
-<p><img src="/blogs/GDP_components_files/figure-html/gdp1_plot-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/GDP_components_files/figure-html/gdp1_plot-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Secondly, recall that GDP is the sum of Household Expenditure (Consumption <em>C</em>), Gross Capital Formation (business investment <em>I</em>), Government Expenditure (G) and Net Exports (exports - imports). Even though there is an indicator <code>Gross Domestic Product (GDP)</code> in your dataframe, we will calculate it given its components discussed above to have a double check.</p>
 <blockquote>
 <p>What is the % difference between what you calculated as GDP and the GDP figure included in the dataframe?</p>
@@ -283,7 +283,7 @@ ggplot(aes(x = Years, y = Values, colour = Indicator))+
   
   #remove the legend&#39;s title
   scale_color_discrete(name=&quot;&quot;)</code></pre>
-<p><img src="/blogs/GDP_components_files/figure-html/gdp2_plot_2-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/GDP_components_files/figure-html/gdp2_plot_2-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Regarding Germany, household expenditure contributes the most to the Country’s GDP during 1970 to 2016 followed by exports and imports. The government expenditure and gross capital formation reported the same trends with a very small growth during the period. Concerning India, household expenditure also accounts the most of its GDP and showed an increasing trend since 1970. Other contributors reported flat trends during 1970 to 2000 and started to grow after that. The U.S.’s GDP reported a substantially growth comparing to the other two countries especially on household expenditures that increased almost five times during the periods.</p>
 <p><strong>Customized plotting data</strong></p>
 <p>We plotted below a chart to analyse the breakdown of each of our countries’ GDP (China, Norway, United Kingdom, Thailand, Italy and France, these are the places where our team members come from).</p>
@@ -345,5 +345,5 @@ ggplot(aes(x = Years, y = Values, colour = Indicator))+
   
   #remove the legend&#39;s title
   scale_color_discrete(name=&quot;&quot;)</code></pre>
-<p><img src="/blogs/GDP_components_files/figure-html/gdp_plot_3-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/GDP_components_files/figure-html/gdp_plot_3-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>

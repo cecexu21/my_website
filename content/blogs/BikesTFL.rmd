@@ -98,12 +98,12 @@ This is a result of COVID lockdown, where bike usage patterns changed. We see th
 In order to show whether there is an apparent increasing trend during pandemic, we generate more visualized graph to show the actual rentals and expected rentals. 
 
 ```{r tfl_absolute_monthly_change, echo=TRUE, out.width="100%", cache=TRUE}
-knitr::include_graphics(here::here("images", "tfl_monthly.png"), error = FALSE)
+knitr::include_graphics("/img/tfl_monthly.png", error = FALSE)
 ```
 
 
 ```{r tfl_percent_change, echo=TRUE, out.width="100%", cache=TRUE}
-knitr::include_graphics(here::here("images", "tfl_weekly.png"), error = FALSE)
+knitr::include_graphics("/img/tfl_weekly.png", error = FALSE)
 ```
 
 

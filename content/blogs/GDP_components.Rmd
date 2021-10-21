@@ -111,7 +111,7 @@ tidy_GDP_data_3 <- tidy_GDP_data %>%
 **Ploting data**
 First, we will create a plot showing GDP and its component from 1970 to 2010.
 
-```{r gdp1_plot, cache=TRUE, out.width="100%"}
+```{r gdp1_plot, cache=TRUE, out.width="80%"}
 
 #create the vector of the indicators we want 
 indicator_list_1 <- c("Gross capital formation", "Exports", "Government expenditure", "Household expenditure", "Imports")
@@ -146,7 +146,7 @@ Secondly, recall that GDP is the sum of Household Expenditure (Consumption *C*),
 
 We will answer this question through our codes.
 
-```{r GDP differences,out.width="100%",  cache=TRUE}
+```{r GDP differences,out.width="80%",  cache=TRUE}
 
 library(tidyverse)
 #creating vector of the countries we want to analyse
@@ -232,7 +232,7 @@ From the above, we can see an average difference of 1.11% for Germany, 0.08% for
 
 Then we will generate a new plot to show GDP and its breakdown at constant 2010 prices in US Dollars among countries.
 
-```{r gdp2_plot_2, out.width="100%", cache=TRUE}
+```{r gdp2_plot_2, out.width="80%", cache=TRUE}
 #create a vector of the of indicators which we will then widen in our pivot_wider
 indicator_list_2 <- c("Gross capital formation", "Exports", "Government expenditure", "Household expenditure", "Imports")
 
@@ -299,7 +299,7 @@ We plotted below a chart to analyse the breakdown of each of our countries' GDP 
 
 
 
-```{r gdp_plot_3,out.width="100%",  cache=TRUE}
+```{r gdp_plot_3,out.width="80%",  cache=TRUE}
 #creating vector of the new countries we want to analyse
 country_list_2 <- c("China", "Norway", "United Kingdom", "Thailand", "Italy", "France")
 

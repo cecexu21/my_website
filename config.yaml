@@ -5,8 +5,7 @@ theme: forty
 googleAnalytics: ''
 disqusShortname: ''
 params:
-  banner: 
-    image: lbs.jpg
+  banner: lbs.jpg
     buttonText: Get Started
     subtitle: |-
       A Chinese girl's life experience 
@@ -73,7 +72,7 @@ params:
       - name: Blogs
         url: blogs
       - name: Generic Blog
-        url: blogs/ipsum
+        url: blogs/self_introduction
       - name: Elements
         url: elements.html
     menu: Menu
@@ -110,7 +109,7 @@ params:
     buttonText: Get Started
     enable: yes
     subtitle: "Hope to have chances to connect with you and hear more about your stories.
-      \n   Thanks for your visit to my website! \n    Now, here is getting close to the end of my presentation.
-       \n   To explore more about me, you can click on the icons below, welcome to be my friends on these social platforms."
+      \n   Thanks for your visit to my website! \n    Now, here is getting close to the end of my website.
+       \n   To know more about me, you can click on the icons below, welcome to be my friends on these social platforms."
     title: That is the end
     url: blogs
