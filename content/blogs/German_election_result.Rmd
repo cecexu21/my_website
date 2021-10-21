@@ -58,6 +58,9 @@ The Guardian newspaper has an [election poll tracker for the upcoming German ele
 The list of the opinion polls since Jan 2021 can be found at [Wikipedia](https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_German_federal_election) and your task is to reproduce the graph similar to the one produced by the Guardian. 
 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JTV50B9l-B8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 The following code will scrape the wikipedia page and import the table in a dataframe, showing the results by our analysis.
 
 

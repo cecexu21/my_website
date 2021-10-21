@@ -73,8 +73,8 @@ Shanghai <- leaflet() %>%
 Shanghai
 ```
 \n\
-Now, let me introduces some fascinating destinations in Shanghai.
-There are five most famous destinations in Shanghai!
+Now, let me introduces some fascinating landmarks in Shanghai.
+There are five most famous scenic spots in Shanghai!
 
 ```{r,destinations in shanghai, echo=FALSE}
 destinations<-data.frame(place=c("Shanghai Museum","Yu Garden","Shanghai Disneyland","The Bund","Shanghai Tower"),
