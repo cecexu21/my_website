@@ -1,5 +1,5 @@
 ---
-title: "Hi, Nice to meet you!"
+title: "Hi, nice to meet you!"
 date: '2021-10-19'
 description: Stories about me
 draft: no
