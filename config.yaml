@@ -6,6 +6,7 @@ googleAnalytics: ''
 disqusShortname: ''
 params:
   banner: 
+    image: lbs.jpg
     buttonText: Get Started
     subtitle: |-
       A Chinese girl's life experience 
@@ -102,7 +103,7 @@ params:
         title: GDP:AN ECONOMY’S ALL
         url: blogs/GDP_components
       - image: movie.jpg
-        subtitle: Is there any rating differences between two famous directors?
+        subtitle: Are there any rating differences between two famous directors?
         title: DIRECTOR PREFERENCES
         url: blogs/imdb_ratings
   two:
