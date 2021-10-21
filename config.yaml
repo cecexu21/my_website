@@ -5,7 +5,7 @@ theme: forty
 googleAnalytics: ''
 disqusShortname: ''
 params:
-  banner: lbs.jpg
+  banner: 
     buttonText: Get Started
     subtitle: |-
       A Chinese girl's life experience 
@@ -57,7 +57,7 @@ params:
       - icon: fa-linkedin
         label: LinkedIn
         url: https://www.linkedin.com/in/chengchen-xu
-  image: ''
+  image: lbs.jpg
   name: Chengchen Xu
   navigation:
     button1:
