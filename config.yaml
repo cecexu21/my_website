@@ -6,6 +6,7 @@ googleAnalytics: ''
 disqusShortname: ''
 params:
   banner: 
+    image: lbs.jpg
     buttonText: Get Started
     subtitle: |-
       A Chinese girl's life experience 
@@ -29,7 +30,7 @@ params:
         title: Phone
   custom_css: []
   custom_js: []
-  description: Your description
+  description: This is Cissie Xu's personal website!
   error404:
     heading: Page couldn't be found
     text: Please visit [this page](/)
@@ -99,11 +100,11 @@ params:
         url: blogs/cpi_changes
       - image: gdp.jpg
         subtitle: How are GDP component changing among countries?
-        title: GDP:An Economy’s All
+        title: GDP:AN ECONOMY’S ALL
         url: blogs/GDP_components
       - image: movie.jpg
-        subtitle: Is there any rating differences between two directors?
-        title: Director preferences
+        subtitle: Is there any rating differences between two famous directors?
+        title: DIRECTOR PREFERENCES
         url: blogs/imdb_ratings
   two:
     buttonText: Get Started
