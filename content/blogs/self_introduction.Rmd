@@ -86,7 +86,7 @@ kable(head(destinations),align="l")
 
 To explore more information, please click on the leaves which will lead you to official websites of these destinations!
 
-```{r, destinations in shanghai 2, echo=FALSE}
+```{r, destinations in shanghai 2, out.echo=FALSE}
 destination_location<-
   data.frame(lat=c(31.230278,31.22416577,31.1453, 31.233501,31.2503),
              lng=c(121.470550,121.48583139,121.6573, 121.505760,121.5064)) 
@@ -117,6 +117,7 @@ addMarkers(icon=Icons,popup=destination_sites)
 
 ```
 \n\
+
 ##Then comes to my internship experience, with a focus on investment banking, I had a lot of previous experience working in IBD departments.
 
 

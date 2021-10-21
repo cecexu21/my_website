@@ -149,7 +149,7 @@ P
 ```
 
 
-## Visualizing the plot
+**Building Chart**
 To create a more visualized plot, we can use ggplotly to show details of every party's vote in every specific time.
 ```{r making_challenge_2_plot_3, fig.show='hold' ,out.width='100%',fig.align='center',warnings= FALSE, message=FALSE, cache=TRUE}
 ggplotly(P,dynamicTicks = TRUE)

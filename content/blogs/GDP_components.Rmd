@@ -55,7 +55,8 @@ UN_GDP_data  <- read_excel(here::here("data", "Download-GDPconstant-USD-countrie
 
 ```
 
-The first thing you need to do is to tidy the data, as it is in wide format and you must make it into long, tidy format. Please express all figures in billions (divide values by `1e9`, or $10^9$), and you want to rename the indicators into something shorter.
+**Cleaning data**
+The first thing we need to do is to tidy the data, as it is in wide format and you must make it into long, tidy format. We need to express all figures in billions (divide values by `1e9`, or $10^9$), and we want to rename the indicators into something shorter.
 
 ```{r reshape_GDP_data, cache=TRUE}
 
@@ -107,6 +108,7 @@ tidy_GDP_data_3 <- tidy_GDP_data %>%
   filter(Country %in% country_list)
 ```
 
+**Ploting data**
 First, we will create a plot showing GDP and its component from 1970 to 2010.
 
 ```{r gdp1_plot, cache=TRUE, out.width="100%"}
@@ -291,6 +293,7 @@ ggplot(aes(x = Years, y = Values, colour = Indicator))+
 
 Regarding Germany, household expenditure contributes the most to the Country’s GDP during 1970 to 2016 followed by exports and imports. The government expenditure and gross capital formation reported the same trends with a very small growth during the period. Concerning India, household expenditure also accounts the most of its GDP and showed an increasing trend since 1970.  Other contributors reported flat trends during 1970 to 2000 and started to grow after that. The U.S.’s GDP reported a substantially growth comparing to the other two countries especially on household expenditures that increased almost five times during the periods.
 
+**Customized plotting data**
 
 We plotted below a chart to analyse the breakdown of each of our countries' GDP (China, Norway, United Kingdom, Thailand, Italy and France, these are the places where our team members come from).
 
