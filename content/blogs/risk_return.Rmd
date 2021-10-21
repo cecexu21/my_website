@@ -94,15 +94,7 @@ tickers <- table1 %>%
 ```
 
 
-```{r plot_1,out.wideth='80%',fig.align='center',cache=TRUE}
-myStocks %>%
-  group_by(symbol)
-ggplot(myStocks,aes(x=date,y=close,fill=symbol,color=symbol))+
-  geom_line()+
-  labs(title="Closing price for stocks market",x="closing price",y="date")+
-  theme(axis.title=element_text(size=2),legend.background = element_blank(),legend.position = "none")
-  
-```
+
 
 
 ```{r get_price_data, message=FALSE, warning=FALSE, cache=TRUE}
@@ -114,6 +106,17 @@ myStocks <- tickers %>%
   group_by(symbol) 
 
 glimpse(myStocks) # examine the structure of the resulting data frame
+```
+
+```{r plot_1,out.wideth='80%',fig.align='center',cache=TRUE}
+myStocks %>%
+  group_by(symbol)
+ggplot(myStocks,aes(x=date,y=close,fill=symbol,color=symbol))+
+  geom_line()+
+  labs(title="Closing price for stocks market",x="closing price",y="date")+
+  theme(axis.title=element_text(size=2),legend.background = element_blank(),legend.position = "none")
+  
+```
 ```
 
 Financial performance analysis depend on returns; If I buy a stock today for 100 and I sell it tomorrow for 101.75, my one-day return, assuming no transaction costs, is 1.75%. So given the adjusted closing prices, our first step is to calculate daily and monthly returns.

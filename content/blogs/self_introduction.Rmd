@@ -57,7 +57,7 @@ knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/aee91187a9c6811a8
 
 **R can also be used to show my hometown, Shanghai! **
 
-### Welcome to Shanghai!**
+### Welcome to Shanghai!
 
 There are a lot of districts in SHANGHAI, such as Jingan District, Huangpu District, Xuhui District, Pudong District, etc..
 
@@ -118,7 +118,7 @@ addMarkers(icon=Icons,popup=destination_sites)
 ```
 
 
-## Then comes to my internship experience, with a focus on investment banking, I had a lot of previous experience working in IBD departments.
+**Then comes to my internship experience, with a focus on investment banking, I had a lot of previous experience working in IBD departments.**
 
 
 # **<span style="color:white;">Internship Experience</span>**
