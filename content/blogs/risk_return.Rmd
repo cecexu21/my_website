@@ -5,7 +5,7 @@ categories:
 date: "2021-09-30"
 description: Risk-Return of DJIA stocks # the title that will show up once someone gets to this page
 draft: false
-image: spices.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+image: DJIA_stocks.png # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
 
 keywords: ""
 slug: risk_return # slug is the shorthand URL address... no spaces plz
@@ -94,6 +94,15 @@ tickers <- table1 %>%
 ```
 
 
+```{r plot_1,out.wideth='80%',fig.align='center',cache=TRUE}
+myStocks %>%
+  group_by(symbol)
+ggplot(myStocks,aes(x=date,y=close,fill=symbol,color=symbol))+
+  geom_line()+
+  labs(title="Closing price for stocks market",x="closing price",y="date")+
+  theme(axis.title=element_text(size=2),legend.background = element_blank(),legend.position = "none")
+  
+```
 
 
 ```{r get_price_data, message=FALSE, warning=FALSE, cache=TRUE}
@@ -189,3 +198,5 @@ by_year_monthly %>%
   NULL
 
 ```
+
+
